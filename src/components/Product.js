@@ -4,7 +4,9 @@ import {
   Card, CardHeader, CardFooter, CardBody, CardTitle, Button,
 } from 'reactstrap';
 
-const Product = ({ product, handleAddProduct, handleRemoveProduct }) => (
+const Product = ({
+  product, handleAddProduct, handleRemoveProduct, quantity,
+}) => (
   <Card body outline color="info">
     <CardHeader>{product.name}</CardHeader>
     <CardBody>
@@ -19,7 +21,7 @@ const Product = ({ product, handleAddProduct, handleRemoveProduct }) => (
       </Button>
       {' '}
       <Button disabled color="info">
-        0
+        {`${quantity}`}
       </Button>
       {' '}
       <Button
@@ -42,10 +44,11 @@ Product.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-      code: PropTypes.code.isRequired,
+      code: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
     }),
   ).isRequired,
   handleAddProduct: PropTypes.func.isRequired,
   handleRemoveProduct: PropTypes.func.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
