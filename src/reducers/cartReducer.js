@@ -1,4 +1,4 @@
-import { CART_UPDATE_SUCCESS } from "../constants";
+import { CART_UPDATE_SUCCESS } from '../constants';
 
 const cartReducer = (state = [], { type, cartItems }) => {
   switch (type) {

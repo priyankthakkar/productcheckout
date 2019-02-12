@@ -1,8 +1,7 @@
 {
-  "extends": "eslint-config-airbnb",
+  "extends": ["react-app", "airbnb", "plugin:jsx-a11y/recommended"],
+  "plugins": ["jsx-a11y"],
   "rules": {
-    "indent": ["error", 4, { "SwitchCase": 1 }],
-    "max-len": [1, 200],
-    "import/first": "off"
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
   }
 }

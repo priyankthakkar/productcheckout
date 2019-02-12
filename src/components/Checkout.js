@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Row, Col, CardDeck, Badge } from "reactstrap";
-import Banner from "./Banner";
-import Product from "./Product";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import {
-  loadProducts,
-  addProductToCart,
-  removeProductFromCart
-} from "../actions";
+  Row, Col, CardDeck, Badge,
+} from 'reactstrap';
+import Banner from './Banner';
+import Product from './Product';
+import { loadProducts, addProductToCart, removeProductFromCart } from '../actions';
 
 class Checkout extends Component {
   componentDidMount() {
@@ -16,8 +15,7 @@ class Checkout extends Component {
 
   handleAddProduct = productCode => this.props.addProductToCart(productCode);
 
-  handleRemoveProduct = productCode =>
-    this.props.removeProductFromCart(productCode);
+  handleRemoveProduct = productCode => this.props.removeProductFromCart(productCode);
 
   render() {
     const { products } = this.props;
@@ -25,12 +23,7 @@ class Checkout extends Component {
     let productDisplay;
 
     if (!products || products.length === 0) {
-      productDisplay = (
-        <Banner
-          className="p-2"
-          message="No products are available to display."
-        />
-      );
+      productDisplay = <Banner className="p-2" message="No products are available to display." />;
     } else {
       productDisplay = (
         <CardDeck>
@@ -61,17 +54,30 @@ class Checkout extends Component {
 const mapDispatchToProps = dispatch => ({
   loadProducts: () => dispatch(loadProducts()),
   addProductToCart: productCode => dispatch(addProductToCart(productCode)),
-  removeProductFromCart: productCode =>
-    dispatch(removeProductFromCart(productCode))
+  removeProductFromCart: productCode => dispatch(removeProductFromCart(productCode)),
 });
 
 const mapStateToProps = ({ isLoading, products, error }) => ({
   isLoading,
   products,
-  error
+  error,
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Checkout);
+
+Checkout.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      code: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+  loadProducts: PropTypes.func.isRequired,
+  addProductToCart: PropTypes.func.isRequired,
+  removeProductFromCart: PropTypes.func.isRequired,
+};

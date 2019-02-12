@@ -1,8 +1,8 @@
-const isCartEmpty = cartItems => (cartItems.length > 0 ? true : false);
+const isCartEmpty = cartItems => cartItems.length === 0;
 
 const isProductAlreadyPresentInCart = (cartItems, productCode) => {
-  const item = cartItems.find(item => item.productCode === productCode);
-  return item ? true : false;
+  const item = cartItems.find(ci => ci.productCode === productCode);
+  return !!item;
 };
 
 export { isCartEmpty, isProductAlreadyPresentInCart };
