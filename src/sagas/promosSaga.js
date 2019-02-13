@@ -1,7 +1,9 @@
-import { takeLatest, call, put } from 'redux-saga/effects';
-import { PROMOS_LOAD } from '../constants';
+import {
+  takeLatest, takeEvery, call, put, select,
+} from 'redux-saga/effects';
+import { PROMOS_LOAD, PROMO_APPLY } from '../constants';
 import { fetchPromos } from '../api';
-import { setPromos, setError } from '../actions';
+import { setPromos, setError, setPromo } from '../actions';
 
 function* handlePromosLoad() {
   try {
@@ -12,6 +14,18 @@ function* handlePromosLoad() {
   }
 }
 
-export default function* watchPromosLoad() {
+export function* watchPromosLoad() {
   yield takeLatest(PROMOS_LOAD, handlePromosLoad);
+}
+
+const getPromos = state => state.promo.promos;
+
+function* handlePromoApply({ promoCode }) {
+  const promos = yield select(getPromos);
+  const code = promos.find(pr => pr.code === promoCode);
+  yield put(setPromo(code));
+}
+
+export function* watchApplyPromo() {
+  yield takeEvery(PROMO_APPLY, handlePromoApply);
 }

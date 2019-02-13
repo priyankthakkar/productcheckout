@@ -9,6 +9,8 @@ import {
   PROMOS_LOAD_SUCCESS,
   CART_CALCULATE_VALUE,
   CART_CALCULATE_VALUE_SUCCESS,
+  PROMO_APPLY,
+  PROMO_APPLY_SUCCESS,
 } from '../constants';
 
 export const loadProducts = () => ({
@@ -56,4 +58,14 @@ export const calculateCartValue = () => ({
 export const setCartValue = cartValue => ({
   type: CART_CALCULATE_VALUE_SUCCESS,
   cartValue,
+});
+
+export const applyPromo = promoCode => ({
+  type: PROMO_APPLY,
+  promoCode,
+});
+
+export const setPromo = promo => ({
+  type: PROMO_APPLY_SUCCESS,
+  promo,
 });

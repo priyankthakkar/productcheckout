@@ -20,94 +20,111 @@ const PromoContainer = styled.div`
   padding: 0.625rem 0;
 `;
 
-const Cart = ({ cartItems, products, cartValue }) => {
-  const { total, discount, payable } = cartValue;
-  let cartDisplay;
-  if (!cartItems || cartItems.length === 0) {
-    cartDisplay = <Banner message="Your cart is empty." />;
-  } else {
-    const cartItemsToDisplay = cartItems.map((ci) => {
-      const product = products.find(p => p.code === ci.productCode);
-      return {
-        product,
-        quantity: ci.quantity,
-      };
-    });
+class Cart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      promoCode: '',
+    };
+  }
 
-    const cartContent = cartItemsToDisplay.map((displayItem) => {
-      const { product, quantity } = displayItem;
-      return (
-        <ListGroupItem key={product.id}>
-          <ClearFixDiv className="clearfix">
-            <div className="float-left">
-              {`${product.name} `}
-              <i className="fa fa-times" />
-              &nbsp;
-              <Badge pill>{quantity}</Badge>
-            </div>
-            <div className="float-right">{`${(product.price * quantity).toFixed(2)} $`}</div>
-          </ClearFixDiv>
-        </ListGroupItem>
+  onPromoCodeChange = e => this.setState({ promoCode: e.target.value });
+
+  render() {
+    const {
+      cartItems, products, cartValue, handleApplyPromocode,
+    } = this.props;
+    const { total, discount, payable } = cartValue;
+    const { promoCode } = this.state;
+    let cartDisplay;
+    if (!cartItems || cartItems.length === 0) {
+      cartDisplay = <Banner message="Your cart is empty." />;
+    } else {
+      const cartItemsToDisplay = cartItems.map((ci) => {
+        const product = products.find(p => p.code === ci.productCode);
+        return {
+          product,
+          quantity: ci.quantity,
+        };
+      });
+
+      const cartContent = cartItemsToDisplay.map((displayItem) => {
+        const { product, quantity } = displayItem;
+        return (
+          <ListGroupItem key={product.id}>
+            <ClearFixDiv className="clearfix">
+              <div className="float-left">
+                {`${product.name} `}
+                <i className="fa fa-times" />
+                &nbsp;
+                <Badge pill>{quantity}</Badge>
+              </div>
+              <div className="float-right">{`${(product.price * quantity).toFixed(2)} $`}</div>
+            </ClearFixDiv>
+          </ListGroupItem>
+        );
+      });
+
+      cartDisplay = (
+        <Fragment>
+          <ListGroup>{cartContent}</ListGroup>
+          <PromoContainer>
+            <InputGroup>
+              <Input placeholder="PROMO CODE" value={promoCode} onChange={this.onPromoCodeChange} />
+              <InputGroupAddon addonType="append">
+                <Button color="primary" onClick={() => handleApplyPromocode(promoCode)}>
+                  APPLY
+                </Button>
+              </InputGroupAddon>
+            </InputGroup>
+          </PromoContainer>
+          <div>
+            <ListGroup>
+              <ListGroupItem>
+                <ClearFixDiv className="clearfix">
+                  <div className="float-left">Total Amount:</div>
+                  <div className="float-right">
+                    {total}
+                    {' $'}
+                  </div>
+                </ClearFixDiv>
+              </ListGroupItem>
+              <ListGroupItem>
+                <ClearFixDiv className="clearfix">
+                  <div className="float-left">Discount: </div>
+                  <div className="float-right">
+                    {discount}
+                    {' $'}
+                  </div>
+                </ClearFixDiv>
+              </ListGroupItem>
+              <ListGroupItem>
+                <ClearFixDiv className="clearfix">
+                  <div className="float-left">Amount Payable: </div>
+                  <div className="float-right">
+                    {payable}
+                    {' $'}
+                  </div>
+                </ClearFixDiv>
+              </ListGroupItem>
+            </ListGroup>
+          </div>
+        </Fragment>
       );
-    });
+    }
 
-    cartDisplay = (
+    return (
       <Fragment>
-        <ListGroup>{cartContent}</ListGroup>
-        <PromoContainer>
-          <InputGroup>
-            <Input placeholder="PROMO CODE" />
-            <InputGroupAddon addonType="append">
-              <Button color="primary">APPLY</Button>
-            </InputGroupAddon>
-          </InputGroup>
-        </PromoContainer>
-        <div>
-          <ListGroup>
-            <ListGroupItem>
-              <ClearFixDiv className="clearfix">
-                <div className="float-left">Total Amount:</div>
-                <div className="float-right">
-                  {total}
-                  {' $'}
-                </div>
-              </ClearFixDiv>
-            </ListGroupItem>
-            <ListGroupItem>
-              <ClearFixDiv className="clearfix">
-                <div className="float-left">Discount: </div>
-                <div className="float-right">
-                  {discount}
-                  {' $'}
-                </div>
-              </ClearFixDiv>
-            </ListGroupItem>
-            <ListGroupItem>
-              <ClearFixDiv className="clearfix">
-                <div className="float-left">Amount Payable: </div>
-                <div className="float-right">
-                  {payable}
-                  {' $'}
-                </div>
-              </ClearFixDiv>
-            </ListGroupItem>
-          </ListGroup>
+        <div className="d-flex justify-content-center">
+          <h3>
+            <Badge color="secondary">Cart</Badge>
+          </h3>
         </div>
+        <div>{cartDisplay}</div>
       </Fragment>
     );
   }
-
-  return (
-    <Fragment>
-      <div className="d-flex justify-content-center">
-        <h3>
-          <Badge color="secondary">Cart</Badge>
-        </h3>
-      </div>
-      <div>{cartDisplay}</div>
-    </Fragment>
-  );
-};
+}
 
 export default Cart;
 
@@ -133,4 +150,5 @@ Cart.propTypes = {
       payable: PropTypes.number.isRequired,
     }),
   ).isRequired,
+  handleApplyPromocode: PropTypes.func.isRequired,
 };

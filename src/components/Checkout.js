@@ -8,7 +8,11 @@ import Banner from './Banner';
 import Product from './Product';
 import Cart from './Cart';
 import {
-  loadProducts, loadPromos, addProductToCart, removeProductFromCart,
+  loadProducts,
+  loadPromos,
+  addProductToCart,
+  removeProductFromCart,
+  applyPromo,
 } from '../actions';
 import { calculateQuantity } from '../util';
 
@@ -27,6 +31,11 @@ class Checkout extends Component {
   handleRemoveProduct = (productCode) => {
     const { onRemoveProductFromCart } = this.props;
     onRemoveProductFromCart(productCode);
+  };
+
+  handleApplyPromocode = (promoCode) => {
+    const { onApplyPromo } = this.props;
+    onApplyPromo(promoCode);
   };
 
   render() {
@@ -64,7 +73,12 @@ class Checkout extends Component {
       <Row>
         <Col lg="9">{productDisplay}</Col>
         <Col lg="3">
-          <Cart cartItems={cartItems} products={products} cartValue={cartValue} />
+          <Cart
+            cartItems={cartItems}
+            products={products}
+            cartValue={cartValue}
+            handleApplyPromocode={this.handleApplyPromocode}
+          />
         </Col>
       </Row>
     );
@@ -76,16 +90,17 @@ const mapDispatchToProps = dispatch => ({
   onLoadPromos: () => dispatch(loadPromos()),
   onAddProductToCart: productCode => dispatch(addProductToCart(productCode)),
   onRemoveProductFromCart: productCode => dispatch(removeProductFromCart(productCode)),
+  onApplyPromo: promoCode => dispatch(applyPromo(promoCode)),
 });
 
 const mapStateToProps = ({
-  isLoading, products, error, cart, promos,
+  isLoading, products, error, cart, promo,
 }) => ({
   isLoading,
   products,
   error,
   cart,
-  promos,
+  promo,
 });
 
 export default connect(
@@ -107,4 +122,5 @@ Checkout.propTypes = {
   onAddProductToCart: PropTypes.func.isRequired,
   onRemoveProductFromCart: PropTypes.func.isRequired,
   onLoadPromos: PropTypes.func.isRequired,
+  onApplyPromo: PropTypes.func.isRequired,
 };
