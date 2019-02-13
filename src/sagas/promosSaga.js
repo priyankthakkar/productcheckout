@@ -4,6 +4,7 @@ import {
 import { PROMOS_LOAD, PROMO_APPLY } from '../constants';
 import { fetchPromos } from '../api';
 import { setPromos, setError, setPromo } from '../actions';
+import { getCart, getAppliedPromos, isPromoCodeValid } from '../util';
 
 function* handlePromosLoad() {
   try {
@@ -22,8 +23,14 @@ const getPromos = state => state.promo.promos;
 
 function* handlePromoApply({ promoCode }) {
   const promos = yield select(getPromos);
+  const appliedPromos = yield select(getAppliedPromos);
+  const cart = yield select(getCart);
   const code = promos.find(pr => pr.code === promoCode);
-  yield put(setPromo(code));
+  const search = appliedPromos.find(ap => ap.code === promoCode);
+
+  if (code && !search && isPromoCodeValid(cart, code)) {
+    yield put(setPromo(code));
+  }
 }
 
 export function* watchApplyPromo() {

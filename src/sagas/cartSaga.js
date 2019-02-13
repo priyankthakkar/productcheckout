@@ -2,7 +2,13 @@ import { takeEvery, select, put } from 'redux-saga/effects';
 import cloneDeep from 'lodash/cloneDeep';
 import { CART_ADD_PRODUCT, CART_REMOVE_PRODUCT, CART_UPDATE_SUCCESS } from '../constants';
 import { setCartItems, setCartValue } from '../actions';
-import { isCartEmpty, isProductAlreadyPresentInCart, calculateCartValue } from '../util';
+import {
+  isCartEmpty,
+  isProductAlreadyPresentInCart,
+  calculateCartValue,
+  getCart,
+  getAppliedPromos,
+} from '../util';
 
 const getCartItems = state => state.cart.cartItems;
 
@@ -64,14 +70,19 @@ export function* watchCartItemRemoveSaga() {
   yield takeEvery(CART_REMOVE_PRODUCT, handleCartItemRemove);
 }
 
-const getCart = state => state.cart;
 const getProducts = state => state.products;
 
 function* handleCartUpdateSuccess() {
   const cart = yield select(getCart);
   const products = yield select(getProducts);
+  const appliedPromos = yield select(getAppliedPromos);
   const total = calculateCartValue(cart.cartItems, products);
-  yield put(setCartValue({ total, discount: 0, payable: 100 }));
+
+  let payable = 0;
+  if (appliedPromos.length === 0) {
+    payable = total;
+  }
+  yield put(setCartValue({ total, discount: 0, payable }));
 }
 
 export function* watchCartUpdateSuccess() {

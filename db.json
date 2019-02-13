@@ -45,7 +45,7 @@
       "code": "FF9543D1",
       "desc": "Reduces the docgen price to $8.99 a unit when at least 10 documents are purchased",
       "type": "PRODUCT",
-      "product": "docgent",
+      "product": "docgen",
       "option": "QUANTITY",
       "quantity": 10,
       "discountType": "PRICE",
