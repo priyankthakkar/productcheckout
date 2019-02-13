@@ -11,7 +11,6 @@ import {
   Button,
 } from 'reactstrap';
 import Banner from './Banner';
-import { calculateCartValue } from '../util';
 
 const ClearFixDiv = styled.div`
   padding: 0.5rem 0;
@@ -21,7 +20,8 @@ const PromoContainer = styled.div`
   padding: 0.625rem 0;
 `;
 
-const Cart = ({ cartItems, products }) => {
+const Cart = ({ cartItems, products, cartValue }) => {
+  const { total, discount, payable } = cartValue;
   let cartDisplay;
   if (!cartItems || cartItems.length === 0) {
     cartDisplay = <Banner message="Your cart is empty." />;
@@ -67,11 +67,30 @@ const Cart = ({ cartItems, products }) => {
             <ListGroupItem>
               <ClearFixDiv className="clearfix">
                 <div className="float-left">Total Amount:</div>
-                <div className="float-right">{calculateCartValue(cartItems, products)}</div>
+                <div className="float-right">
+                  {total}
+                  {' $'}
+                </div>
               </ClearFixDiv>
             </ListGroupItem>
-            <ListGroupItem>Discount: </ListGroupItem>
-            <ListGroupItem>Amount Payable: </ListGroupItem>
+            <ListGroupItem>
+              <ClearFixDiv className="clearfix">
+                <div className="float-left">Discount: </div>
+                <div className="float-right">
+                  {discount}
+                  {' $'}
+                </div>
+              </ClearFixDiv>
+            </ListGroupItem>
+            <ListGroupItem>
+              <ClearFixDiv className="clearfix">
+                <div className="float-left">Amount Payable: </div>
+                <div className="float-right">
+                  {payable}
+                  {' $'}
+                </div>
+              </ClearFixDiv>
+            </ListGroupItem>
           </ListGroup>
         </div>
       </Fragment>
@@ -105,6 +124,13 @@ Cart.propTypes = {
     PropTypes.shape({
       productCode: PropTypes.string.isRequired,
       quantity: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+  cartValue: PropTypes.objectOf(
+    PropTypes.shape({
+      total: PropTypes.number.isRequired,
+      discout: PropTypes.number.isRequired,
+      payable: PropTypes.number.isRequired,
     }),
   ).isRequired,
 };

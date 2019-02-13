@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   isLoading: loadingReducer,
   products: productsReducer,
   error: errorReducer,
-  cartItems: cartReducer,
+  cart: cartReducer,
   promos: promosReducer,
 });
 

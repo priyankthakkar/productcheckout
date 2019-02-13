@@ -7,6 +7,8 @@ import {
   CART_UPDATE_SUCCESS,
   PROMOS_LOAD,
   PROMOS_LOAD_SUCCESS,
+  CART_CALCULATE_VALUE,
+  CART_CALCULATE_VALUE_SUCCESS,
 } from '../constants';
 
 export const loadProducts = () => ({
@@ -45,4 +47,13 @@ export const addProductToCart = productCode => ({
 export const removeProductFromCart = productCode => ({
   type: CART_REMOVE_PRODUCT,
   productCode,
+});
+
+export const calculateCartValue = () => ({
+  type: CART_CALCULATE_VALUE,
+});
+
+export const setCartValue = cartValue => ({
+  type: CART_CALCULATE_VALUE_SUCCESS,
+  cartValue,
 });

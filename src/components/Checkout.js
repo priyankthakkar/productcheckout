@@ -30,7 +30,8 @@ class Checkout extends Component {
   };
 
   render() {
-    const { products, cartItems } = this.props;
+    const { products, cart } = this.props;
+    const { cartItems, cartValue } = cart;
 
     let productDisplay;
 
@@ -63,7 +64,7 @@ class Checkout extends Component {
       <Row>
         <Col lg="9">{productDisplay}</Col>
         <Col lg="3">
-          <Cart cartItems={cartItems} products={products} />
+          <Cart cartItems={cartItems} products={products} cartValue={cartValue} />
         </Col>
       </Row>
     );
@@ -78,12 +79,12 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = ({
-  isLoading, products, error, cartItems, promos,
+  isLoading, products, error, cart, promos,
 }) => ({
   isLoading,
   products,
   error,
-  cartItems,
+  cart,
   promos,
 });
 
@@ -101,12 +102,7 @@ Checkout.propTypes = {
       price: PropTypes.number.isRequired,
     }),
   ).isRequired,
-  cartItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      productCode: PropTypes.string.isRequired,
-      quantity: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
+  cart: PropTypes.object,
   onLoadProducts: PropTypes.func.isRequired,
   onAddProductToCart: PropTypes.func.isRequired,
   onRemoveProductFromCart: PropTypes.func.isRequired,
