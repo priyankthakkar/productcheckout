@@ -3,7 +3,9 @@ import {
 } from 'redux-saga/effects';
 import { PROMOS_LOAD, PROMO_APPLY } from '../constants';
 import { fetchPromos } from '../api';
-import { setPromos, setError, setPromo } from '../actions';
+import {
+  setPromos, setError, setPromo, setCartItems,
+} from '../actions';
 import { getCart, getAppliedPromos, isPromoCodeValid } from '../util';
 
 function* handlePromosLoad() {
@@ -30,6 +32,7 @@ function* handlePromoApply({ promoCode }) {
 
   if (code && !search && isPromoCodeValid(cart, code)) {
     yield put(setPromo(code));
+    yield put(setCartItems(cart.cartItems));
   }
 }
 

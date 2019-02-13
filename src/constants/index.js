@@ -14,3 +14,5 @@ export const PROMO_CART_TYPE = 'CART';
 export const PROMO_PRODUCT_TYPE = 'PRODUCT';
 export const PROMO_AMOUNT_OPTION = 'AMOUNT';
 export const PROMO_QUANTITY_OPTION = 'QUANTITY';
+export const PROMO_PERCENTAGE_DISCONUT = 'percentage';
+export const PROMO_PRICE_DISCOUNT = 'PRICE';
