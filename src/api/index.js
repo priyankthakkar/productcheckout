@@ -13,4 +13,17 @@ const fetchProducts = async () => {
   return data;
 };
 
-export { fetchProducts };
+const fetchPromos = async () => {
+  const response = await axios.get(
+    'https://my-json-server.typicode.com/priyankthakkar/productcheckout/promos',
+  );
+  const data = await response.data;
+
+  if (response.status >= 400) {
+    throw new Error(data.error);
+  }
+
+  return data;
+};
+
+export { fetchProducts, fetchPromos };

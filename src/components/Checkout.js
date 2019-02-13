@@ -7,12 +7,15 @@ import {
 import Banner from './Banner';
 import Product from './Product';
 import Cart from './Cart';
-import { loadProducts, addProductToCart, removeProductFromCart } from '../actions';
+import {
+  loadProducts, loadPromos, addProductToCart, removeProductFromCart,
+} from '../actions';
 import { calculateQuantity } from '../util';
 
 class Checkout extends Component {
   componentDidMount() {
-    const { onLoadProducts } = this.props;
+    const { onLoadProducts, onLoadPromos } = this.props;
+    onLoadPromos();
     onLoadProducts();
   }
 
@@ -69,17 +72,19 @@ class Checkout extends Component {
 
 const mapDispatchToProps = dispatch => ({
   onLoadProducts: () => dispatch(loadProducts()),
+  onLoadPromos: () => dispatch(loadPromos()),
   onAddProductToCart: productCode => dispatch(addProductToCart(productCode)),
   onRemoveProductFromCart: productCode => dispatch(removeProductFromCart(productCode)),
 });
 
 const mapStateToProps = ({
-  isLoading, products, error, cartItems,
+  isLoading, products, error, cartItems, promos,
 }) => ({
   isLoading,
   products,
   error,
   cartItems,
+  promos,
 });
 
 export default connect(
@@ -105,4 +110,5 @@ Checkout.propTypes = {
   onLoadProducts: PropTypes.func.isRequired,
   onAddProductToCart: PropTypes.func.isRequired,
   onRemoveProductFromCart: PropTypes.func.isRequired,
+  onLoadPromos: PropTypes.func.isRequired,
 };

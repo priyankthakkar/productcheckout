@@ -5,6 +5,8 @@ import {
   CART_ADD_PRODUCT,
   CART_REMOVE_PRODUCT,
   CART_UPDATE_SUCCESS,
+  PROMOS_LOAD,
+  PROMOS_LOAD_SUCCESS,
 } from '../constants';
 
 export const loadProducts = () => ({
@@ -14,6 +16,15 @@ export const loadProducts = () => ({
 export const setProducts = products => ({
   type: PRODUCTS_LOAD_SUCCESS,
   products,
+});
+
+export const loadPromos = () => ({
+  type: PROMOS_LOAD,
+});
+
+export const setPromos = promos => ({
+  type: PROMOS_LOAD_SUCCESS,
+  promos,
 });
 
 export const setError = error => ({
