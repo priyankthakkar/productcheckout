@@ -11,6 +11,7 @@ import {
   Button,
 } from 'reactstrap';
 import Banner from './Banner';
+import { getAppliedPromos } from '../util';
 
 const ClearFixDiv = styled.div`
   padding: 0.5rem 0;
@@ -32,11 +33,12 @@ class Cart extends React.Component {
 
   render() {
     const {
-      cartItems, products, cartValue, handleApplyPromocode,
+      cartItems, products, cartValue, appliedPromos, handleApplyPromocode,
     } = this.props;
     const { total, discount, payable } = cartValue;
     const { promoCode } = this.state;
     let cartDisplay;
+    let promosSection;
     if (!cartItems || cartItems.length === 0) {
       cartDisplay = <Banner message="Your cart is empty." />;
     } else {
@@ -65,10 +67,21 @@ class Cart extends React.Component {
         );
       });
 
+      if (appliedPromos && appliedPromos.length > 0) {
+        promosSection = (
+          <ListGroup>
+            {appliedPromos.map(pc => (
+              <ListGroupItem key={pc.id}>{pc.code}</ListGroupItem>
+            ))}
+          </ListGroup>
+        );
+      }
+
       cartDisplay = (
         <Fragment>
           <ListGroup>{cartContent}</ListGroup>
           <PromoContainer>
+            {promosSection}
             <InputGroup>
               <Input placeholder="PROMO CODE" value={promoCode} onChange={this.onPromoCodeChange} />
               <InputGroupAddon addonType="append">

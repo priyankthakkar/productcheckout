@@ -39,8 +39,9 @@ class Checkout extends Component {
   };
 
   render() {
-    const { products, cart } = this.props;
+    const { products, cart, promo } = this.props;
     const { cartItems, cartValue } = cart;
+    const { appliedPromos } = promo;
 
     let productDisplay;
 
@@ -77,6 +78,7 @@ class Checkout extends Component {
             cartItems={cartItems}
             products={products}
             cartValue={cartValue}
+            appliedPromos={appliedPromos}
             handleApplyPromocode={this.handleApplyPromocode}
           />
         </Col>

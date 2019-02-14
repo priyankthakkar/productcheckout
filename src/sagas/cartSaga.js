@@ -8,6 +8,7 @@ import {
   calculateCartValue,
   getCart,
   getAppliedPromos,
+  calculateDiscount,
 } from '../util';
 
 const getCartItems = state => state.cart.cartItems;
@@ -77,12 +78,18 @@ function* handleCartUpdateSuccess() {
   const products = yield select(getProducts);
   const appliedPromos = yield select(getAppliedPromos);
   const total = calculateCartValue(cart.cartItems, products);
-
+  let discount = 0;
   let payable = 0;
   if (appliedPromos.length === 0) {
     payable = total;
+  } else {
+    discount = calculateDiscount(cart, appliedPromos, products);
+    console.log(`Calculated discount is: ${discount}`);
+    payable = total - discount;
+    payable = payable.toFixed(2);
+    discount = discount.toFixed(2);
   }
-  yield put(setCartValue({ total, discount: 0, payable }));
+  yield put(setCartValue({ total, discount, payable }));
 }
 
 export function* watchCartUpdateSuccess() {

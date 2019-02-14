@@ -3,7 +3,7 @@ import {
   PROMO_PRODUCT_TYPE,
   PROMO_AMOUNT_OPTION,
   PROMO_QUANTITY_OPTION,
-  PROMO_PERCENTAGE_DISCONUT,
+  PROMO_PERCENTAGE_DISCOUNT,
   PROMO_PRICE_DISCOUNT,
 } from '../constants';
 
@@ -43,6 +43,7 @@ const getCart = state => state.cart;
 const getAppliedPromos = state => state.promo.appliedPromos;
 
 const isPromoCodeValid = (cart, code) => {
+  debugger;
   const { cartItems, cartValue } = cart;
   if (!code || !cartItems || cartItems.length === 0) return false;
 
@@ -80,6 +81,7 @@ const calculateDiscount = (cart, appliedPromos, products) => {
   }
 
   const reducer = (accumulator, code) => {
+    debugger;
     if (!code) {
       return accumulator + 0;
     }
@@ -87,9 +89,9 @@ const calculateDiscount = (cart, appliedPromos, products) => {
     if (code.type === PROMO_CART_TYPE && code.option === PROMO_AMOUNT_OPTION) {
       const amount = code[code.option.toLowerCase()];
       if (cartValue.payable >= amount) {
-        if (code.disountType === PROMO_PERCENTAGE_DISCONUT) {
-          const percentage = code[code.disountType.toLowerCase()];
-          const discount = (cartValue.payable * percentage) / 100;
+        if (code.discountType === PROMO_PERCENTAGE_DISCOUNT) {
+          const percentage = code[code.discountType.toLowerCase()];
+          const discount = (cartValue.total * percentage) / 100;
           return accumulator + discount;
         }
       }
@@ -97,8 +99,8 @@ const calculateDiscount = (cart, appliedPromos, products) => {
       const quantity = code[code.option.toLowerCase()];
       const item = cartItems.find(ci => ci.productCode === code.product);
       if (item && item.quantity >= quantity) {
-        if (code.disountType === PROMO_PRICE_DISCOUNT) {
-          const specialPrice = code[code.disountType.toLowerCase()];
+        if (code.discountType === PROMO_PRICE_DISCOUNT) {
+          const specialPrice = code[code.discountType.toLowerCase()];
           const product = products.find(p => p.code === code.product);
           let difference = product.price - specialPrice;
           if (difference < 0) {
@@ -111,7 +113,7 @@ const calculateDiscount = (cart, appliedPromos, products) => {
     }
     return accumulator + 0;
   };
-  appliedPromos.reduce(reducer, 0);
+  return appliedPromos.reduce(reducer, 0);
 };
 
 export {

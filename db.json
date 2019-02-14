@@ -56,7 +56,7 @@
       "code": "YYGWKJD",
       "desc": "Reduces the form price to $89.99 a unit when at least 1 wf is purchased",
       "type": "PRODUCT",
-      "product": "wf",
+      "product": "form",
       "option": "QUANTITY",
       "quantity": 1,
       "discountType": "PRICE",
