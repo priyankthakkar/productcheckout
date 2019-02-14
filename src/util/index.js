@@ -43,7 +43,6 @@ const getCart = state => state.cart;
 const getAppliedPromos = state => state.promo.appliedPromos;
 
 const isPromoCodeValid = (cart, code) => {
-  debugger;
   const { cartItems, cartValue } = cart;
   if (!code || !cartItems || cartItems.length === 0) return false;
 
@@ -80,18 +79,19 @@ const calculateDiscount = (cart, appliedPromos, products) => {
     return 0;
   }
 
+  const updatedCartValue = calculateCartValue(cartItems, products);
+
   const reducer = (accumulator, code) => {
-    debugger;
     if (!code) {
       return accumulator + 0;
     }
 
     if (code.type === PROMO_CART_TYPE && code.option === PROMO_AMOUNT_OPTION) {
       const amount = code[code.option.toLowerCase()];
-      if (cartValue.payable >= amount) {
+      if (updatedCartValue >= amount) {
         if (code.discountType === PROMO_PERCENTAGE_DISCOUNT) {
           const percentage = code[code.discountType.toLowerCase()];
-          const discount = (cartValue.total * percentage) / 100;
+          const discount = (updatedCartValue * percentage) / 100;
           return accumulator + discount;
         }
       }

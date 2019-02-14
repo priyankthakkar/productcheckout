@@ -1,7 +1,12 @@
 import { takeEvery, select, put } from 'redux-saga/effects';
 import cloneDeep from 'lodash/cloneDeep';
-import { CART_ADD_PRODUCT, CART_REMOVE_PRODUCT, CART_UPDATE_SUCCESS } from '../constants';
-import { setCartItems, setCartValue } from '../actions';
+import {
+  CART_ADD_PRODUCT,
+  CART_REMOVE_PRODUCT,
+  CART_UPDATE_SUCCESS,
+  CART_TRIGGER_CALCULATION,
+} from '../constants';
+import { setCartItems, setCartValue, triggerCartRecalculation } from '../actions';
 import {
   isCartEmpty,
   isProductAlreadyPresentInCart,
@@ -40,6 +45,7 @@ function* handleCartItemAdd({ productCode }) {
   }
 
   yield put(setCartItems(updatedItems));
+  yield put(triggerCartRecalculation());
 }
 
 export function* watchCartItemAddSaga() {
@@ -65,6 +71,7 @@ function* handleCartItemRemove({ productCode }) {
   }
 
   yield put(setCartItems(updatedItems));
+  yield put(triggerCartRecalculation());
 }
 
 export function* watchCartItemRemoveSaga() {
@@ -78,6 +85,7 @@ function* handleCartUpdateSuccess() {
   const products = yield select(getProducts);
   const appliedPromos = yield select(getAppliedPromos);
   const total = calculateCartValue(cart.cartItems, products);
+  debugger;
   let discount = 0;
   let payable = 0;
   if (appliedPromos.length === 0) {
@@ -93,5 +101,5 @@ function* handleCartUpdateSuccess() {
 }
 
 export function* watchCartUpdateSuccess() {
-  yield takeEvery(CART_UPDATE_SUCCESS, handleCartUpdateSuccess);
+  yield takeEvery(CART_TRIGGER_CALCULATION, handleCartUpdateSuccess);
 }

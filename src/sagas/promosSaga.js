@@ -4,7 +4,7 @@ import {
 import { PROMOS_LOAD, PROMO_APPLY } from '../constants';
 import { fetchPromos } from '../api';
 import {
-  setPromos, setError, setPromo, setCartItems,
+  setPromos, setError, setPromo, triggerCartRecalculation,
 } from '../actions';
 import { getCart, getAppliedPromos, isPromoCodeValid } from '../util';
 
@@ -32,7 +32,7 @@ function* handlePromoApply({ promoCode }) {
 
   if (code && !search && isPromoCodeValid(cart, code)) {
     yield put(setPromo(code));
-    yield put(setCartItems(cart.cartItems));
+    yield put(triggerCartRecalculation());
   }
 }
 

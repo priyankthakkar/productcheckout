@@ -11,6 +11,7 @@ import {
   CART_CALCULATE_VALUE_SUCCESS,
   PROMO_APPLY,
   PROMO_APPLY_SUCCESS,
+  CART_TRIGGER_CALCULATION,
 } from '../constants';
 
 export const loadProducts = () => ({
@@ -68,4 +69,8 @@ export const applyPromo = promoCode => ({
 export const setPromo = promo => ({
   type: PROMO_APPLY_SUCCESS,
   promo,
+});
+
+export const triggerCartRecalculation = () => ({
+  type: CART_TRIGGER_CALCULATION,
 });
