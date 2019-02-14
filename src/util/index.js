@@ -106,7 +106,7 @@ const calculateDiscount = (cart, appliedPromos, products) => {
           if (difference < 0) {
             difference *= -1;
           }
-          const discount = quantity * difference;
+          const discount = item.quantity * difference;
           return accumulator + discount;
         }
       }
