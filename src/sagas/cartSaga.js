@@ -1,11 +1,6 @@
 import { takeEvery, select, put } from 'redux-saga/effects';
 import cloneDeep from 'lodash/cloneDeep';
-import {
-  CART_ADD_PRODUCT,
-  CART_REMOVE_PRODUCT,
-  CART_UPDATE_SUCCESS,
-  CART_TRIGGER_CALCULATION,
-} from '../constants';
+import { CART_ADD_PRODUCT, CART_REMOVE_PRODUCT, CART_TRIGGER_CALCULATION } from '../constants';
 import { setCartItems, setCartValue, triggerCartRecalculation } from '../actions';
 import {
   isCartEmpty,
