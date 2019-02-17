@@ -12,6 +12,8 @@ import {
   PROMO_APPLY,
   PROMO_APPLY_SUCCESS,
   CART_TRIGGER_CALCULATION,
+  PROMO_VALIDATE,
+  PROMO_VALIDATE_SUCCESS,
 } from '../constants';
 
 export const loadProducts = () => ({
@@ -73,4 +75,14 @@ export const setPromo = promo => ({
 
 export const triggerCartRecalculation = () => ({
   type: CART_TRIGGER_CALCULATION,
+});
+
+export const validatePromos = productCode => ({
+  type: PROMO_VALIDATE,
+  productCode,
+});
+
+export const updateValidPromos = appliedPromos => ({
+  type: PROMO_VALIDATE_SUCCESS,
+  appliedPromos,
 });

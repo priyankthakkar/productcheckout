@@ -1,7 +1,22 @@
 import { takeEvery, select, put } from 'redux-saga/effects';
 import cloneDeep from 'lodash/cloneDeep';
-import { CART_ADD_PRODUCT, CART_REMOVE_PRODUCT, CART_TRIGGER_CALCULATION } from '../constants';
-import { setCartItems, setCartValue, triggerCartRecalculation } from '../actions';
+import {
+  CART_ADD_PRODUCT,
+  CART_REMOVE_PRODUCT,
+  CART_TRIGGER_CALCULATION,
+  PROMO_VALIDATE,
+  PROMO_PRODUCT_TYPE,
+  PROMO_AMOUNT_OPTION,
+  PROMO_CART_TYPE,
+  PROMO_QUANTITY_OPTION,
+} from '../constants';
+import {
+  setCartItems,
+  setCartValue,
+  triggerCartRecalculation,
+  validatePromos,
+  updateValidPromos,
+} from '../actions';
 import {
   isCartEmpty,
   isProductAlreadyPresentInCart,
@@ -31,11 +46,12 @@ function* handleCartItemAdd({ productCode }) {
     });
   } else {
     updatedItems = cartItems.map((item) => {
-      if (item.productCode === productCode) {
-        item.quantity += 1;
-        return item;
+      const newItem = cloneDeep(item);
+      if (newItem.productCode === productCode) {
+        newItem.quantity += 1;
+        return newItem;
       }
-      return item;
+      return newItem;
     });
   }
 
@@ -53,11 +69,12 @@ function* handleCartItemRemove({ productCode }) {
 
   if (!isCartEmpty(cartItems) && isProductAlreadyPresentInCart(cartItems, productCode)) {
     updatedItems = cartItems.map((item) => {
-      if (item.productCode === productCode) {
-        item.quantity -= 1;
-        return item;
+      const newItem = cloneDeep(item);
+      if (newItem.productCode === productCode) {
+        newItem.quantity -= 1;
+        return newItem;
       }
-      return item;
+      return newItem;
     });
 
     updatedItems = updatedItems.filter(item => item.quantity !== 0);
@@ -67,6 +84,7 @@ function* handleCartItemRemove({ productCode }) {
 
   yield put(setCartItems(updatedItems));
   yield put(triggerCartRecalculation());
+  yield put(validatePromos(productCode));
 }
 
 export function* watchCartItemRemoveSaga() {
@@ -80,14 +98,12 @@ function* handleCartUpdateSuccess() {
   const products = yield select(getProducts);
   const appliedPromos = yield select(getAppliedPromos);
   const total = calculateCartValue(cart.cartItems, products);
-  debugger;
   let discount = 0;
   let payable = 0;
   if (appliedPromos.length === 0) {
     payable = total;
   } else {
     discount = calculateDiscount(cart, appliedPromos, products);
-    console.log(`Calculated discount is: ${discount}`);
     payable = total - discount;
     payable = payable.toFixed(2);
     discount = discount.toFixed(2);
@@ -97,4 +113,61 @@ function* handleCartUpdateSuccess() {
 
 export function* watchCartUpdateSuccess() {
   yield takeEvery(CART_TRIGGER_CALCULATION, handleCartUpdateSuccess);
+}
+
+function* validateAppliedPromos({ productCode }) {
+  let appliedPromos = yield select(getAppliedPromos);
+  let promosToRemove = [];
+  const cart = yield select(getCart);
+  const productPromo = appliedPromos.find(
+    ap => ap.type === PROMO_PRODUCT_TYPE && ap.product === productCode,
+  );
+  const { cartItems, cartValue } = cart;
+  const product = cartItems.find(ci => ci.productCode === productCode);
+
+  if (!product && productPromo) {
+    promosToRemove.push(productPromo);
+  } else if (productPromo) {
+    if (productPromo.option === PROMO_QUANTITY_OPTION) {
+      const quantity = productPromo[PROMO_QUANTITY_OPTION.toLowerCase()];
+      if (product.quantity < quantity) {
+        promosToRemove.push(productPromo);
+      }
+    }
+  }
+
+  let removedPromosFilter;
+  if (promosToRemove && promosToRemove.length > 0) {
+    removedPromosFilter = promosToRemove.map(ptr => ptr.code);
+    const result = appliedPromos.filter(ap => !removedPromosFilter.includes(ap.code));
+    yield put(updateValidPromos(result));
+  }
+
+  promosToRemove = [];
+  const cartPromos = appliedPromos.filter(ap => ap.type === PROMO_CART_TYPE);
+  if (cartPromos && cartPromos.length > 0) {
+    promosToRemove = cartPromos.filter(
+      cp => cp.option === PROMO_AMOUNT_OPTION
+        && cartValue.total < cp[PROMO_AMOUNT_OPTION.toLowerCase()],
+    );
+    // promosToRemove = cartPromos.filter((cp) => {
+    //   if (cp.option === PROMO_AMOUNT_OPTION) {
+    //     const amount = cp[PROMO_AMOUNT_OPTION.toLowerCase()];
+    //     if (cartValue.total < amount) {
+    //       return cp;
+    //     }
+    //   }
+    // });
+  }
+
+  appliedPromos = yield select(getAppliedPromos);
+  if (promosToRemove && promosToRemove.length > 0) {
+    removedPromosFilter = promosToRemove.map(ptr => ptr.code);
+    const result = appliedPromos.filter(ap => !removedPromosFilter.includes(ap.code));
+    yield put(updateValidPromos(result));
+  }
+}
+
+export function* triggerValidatePromos() {
+  yield takeEvery(PROMO_VALIDATE, validateAppliedPromos);
 }
