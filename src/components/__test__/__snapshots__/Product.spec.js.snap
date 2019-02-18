@@ -1,0 +1,502 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product Component should render without throwing error 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Product
+    handleAddProduct={[MockFunction]}
+    handleRemoveProduct={[MockFunction]}
+    product={
+      Object {
+        "code": "wf",
+        "id": 1,
+        "name": "Workflow",
+        "price": 199.99,
+      }
+    }
+    quantity={20}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "body": true,
+      "children": Array [
+        <CardHeader
+          tag="div"
+        >
+          Workflow
+        </CardHeader>,
+        <CardBody
+          tag="div"
+        >
+          <CardTitle
+            tag="div"
+          >
+            Product Code: wf
+          </CardTitle>
+          <Button
+            className="rounded-circle"
+            color="primary"
+            onClick={[Function]}
+            outline={true}
+            tag="button"
+          >
+            <i
+              className="fa fa-plus"
+            />
+          </Button>
+           
+          <Button
+            color="info"
+            disabled={true}
+            tag="button"
+          >
+            20
+          </Button>
+           
+          <Button
+            className="rounded-circle"
+            color="primary"
+            onClick={[Function]}
+            outline={true}
+            tag="button"
+          >
+            <i
+              className="fa fa-minus"
+            />
+          </Button>
+        </CardBody>,
+        <CardFooter
+          tag="div"
+        >
+          Price: $199.99
+        </CardFooter>,
+      ],
+      "color": "info",
+      "outline": true,
+      "tag": "div",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": "Workflow",
+          "tag": "div",
+        },
+        "ref": null,
+        "rendered": "Workflow",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <CardTitle
+              tag="div"
+            >
+              Product Code: wf
+            </CardTitle>,
+            <Button
+              className="rounded-circle"
+              color="primary"
+              onClick={[Function]}
+              outline={true}
+              tag="button"
+            >
+              <i
+                className="fa fa-plus"
+              />
+            </Button>,
+            " ",
+            <Button
+              color="info"
+              disabled={true}
+              tag="button"
+            >
+              20
+            </Button>,
+            " ",
+            <Button
+              className="rounded-circle"
+              color="primary"
+              onClick={[Function]}
+              outline={true}
+              tag="button"
+            >
+              <i
+                className="fa fa-minus"
+              />
+            </Button>,
+          ],
+          "tag": "div",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Product Code: wf",
+              "tag": "div",
+            },
+            "ref": null,
+            "rendered": "Product Code: wf",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <i
+                className="fa fa-plus"
+              />,
+              "className": "rounded-circle",
+              "color": "primary",
+              "onClick": [Function],
+              "outline": true,
+              "tag": "button",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "fa fa-plus",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            "type": [Function],
+          },
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "20",
+              "color": "info",
+              "disabled": true,
+              "tag": "button",
+            },
+            "ref": null,
+            "rendered": "20",
+            "type": [Function],
+          },
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <i
+                className="fa fa-minus"
+              />,
+              "className": "rounded-circle",
+              "color": "primary",
+              "onClick": [Function],
+              "outline": true,
+              "tag": "button",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "fa fa-minus",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "i",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": "Price: $199.99",
+          "tag": "div",
+        },
+        "ref": null,
+        "rendered": "Price: $199.99",
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "body": true,
+        "children": Array [
+          <CardHeader
+            tag="div"
+          >
+            Workflow
+          </CardHeader>,
+          <CardBody
+            tag="div"
+          >
+            <CardTitle
+              tag="div"
+            >
+              Product Code: wf
+            </CardTitle>
+            <Button
+              className="rounded-circle"
+              color="primary"
+              onClick={[Function]}
+              outline={true}
+              tag="button"
+            >
+              <i
+                className="fa fa-plus"
+              />
+            </Button>
+             
+            <Button
+              color="info"
+              disabled={true}
+              tag="button"
+            >
+              20
+            </Button>
+             
+            <Button
+              className="rounded-circle"
+              color="primary"
+              onClick={[Function]}
+              outline={true}
+              tag="button"
+            >
+              <i
+                className="fa fa-minus"
+              />
+            </Button>
+          </CardBody>,
+          <CardFooter
+            tag="div"
+          >
+            Price: $199.99
+          </CardFooter>,
+        ],
+        "color": "info",
+        "outline": true,
+        "tag": "div",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": "Workflow",
+            "tag": "div",
+          },
+          "ref": null,
+          "rendered": "Workflow",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <CardTitle
+                tag="div"
+              >
+                Product Code: wf
+              </CardTitle>,
+              <Button
+                className="rounded-circle"
+                color="primary"
+                onClick={[Function]}
+                outline={true}
+                tag="button"
+              >
+                <i
+                  className="fa fa-plus"
+                />
+              </Button>,
+              " ",
+              <Button
+                color="info"
+                disabled={true}
+                tag="button"
+              >
+                20
+              </Button>,
+              " ",
+              <Button
+                className="rounded-circle"
+                color="primary"
+                onClick={[Function]}
+                outline={true}
+                tag="button"
+              >
+                <i
+                  className="fa fa-minus"
+                />
+              </Button>,
+            ],
+            "tag": "div",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Product Code: wf",
+                "tag": "div",
+              },
+              "ref": null,
+              "rendered": "Product Code: wf",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <i
+                  className="fa fa-plus"
+                />,
+                "className": "rounded-circle",
+                "color": "primary",
+                "onClick": [Function],
+                "outline": true,
+                "tag": "button",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fa fa-plus",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              "type": [Function],
+            },
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "20",
+                "color": "info",
+                "disabled": true,
+                "tag": "button",
+              },
+              "ref": null,
+              "rendered": "20",
+              "type": [Function],
+            },
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <i
+                  className="fa fa-minus"
+                />,
+                "className": "rounded-circle",
+                "color": "primary",
+                "onClick": [Function],
+                "outline": true,
+                "tag": "button",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "fa fa-minus",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "i",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": "Price: $199.99",
+            "tag": "div",
+          },
+          "ref": null,
+          "rendered": "Price: $199.99",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

@@ -40,14 +40,12 @@ const Product = ({
 export default Product;
 
 Product.propTypes = {
-  product: PropTypes.objectOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      code: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    code: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
   handleAddProduct: PropTypes.func.isRequired,
   handleRemoveProduct: PropTypes.func.isRequired,
   quantity: PropTypes.number.isRequired,

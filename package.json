@@ -39,6 +39,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint-config-airbnb": "^17.1.0"
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "jest-enzyme": "^7.0.1"
   }
 }

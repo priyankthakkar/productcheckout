@@ -156,12 +156,10 @@ Cart.propTypes = {
       quantity: PropTypes.number.isRequired,
     }),
   ).isRequired,
-  cartValue: PropTypes.objectOf(
-    PropTypes.shape({
-      total: PropTypes.number.isRequired,
-      discout: PropTypes.number.isRequired,
-      payable: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
+  cartValue: PropTypes.shape({
+    total: PropTypes.string.isRequired,
+    discount: PropTypes.string.isRequired,
+    payable: PropTypes.string.isRequired,
+  }).isRequired,
   handleApplyPromocode: PropTypes.func.isRequired,
 };
