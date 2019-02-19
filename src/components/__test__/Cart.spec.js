@@ -91,4 +91,38 @@ describe('Cart Component', () => {
         .trim(),
     ).toBe(emptyCartMessage);
   });
+
+  it('verify the state of promo textbox', () => {
+    const testPromoCode = 'ABCDEFG';
+
+    const mountedComponent = mount(
+      <Cart
+        products={products}
+        cartItems={cart.cartItems}
+        cartValue={cart.cartValue}
+        appliedPromos={appliedPromos}
+        handleApplyPromocode={handleApplyPromocode}
+      />,
+    );
+
+    mountedComponent.setState({ promoCode: testPromoCode }, () => {
+      const input = mountedComponent.find('.txt-promo-code').first();
+      expect(input.getElement().props.value).toBe(testPromoCode);
+    });
+  });
+
+  it('verify the promo code is applied', () => {
+    const testPromoCode = 'ABCDEFG';
+    CartComponent.setState(
+      {
+        promoCode: testPromoCode,
+      },
+      () => {
+        const applyPromoButton = CartComponent.find('.btn-apply-promo');
+        expect(applyPromoButton).toHaveLength(1);
+        applyPromoButton.simulate('click');
+        expect(handleApplyPromocode).toHaveBeenCalledTimes(1);
+      },
+    );
+  });
 });

@@ -84,9 +84,18 @@ class Cart extends React.Component {
           <PromoContainer>
             {promosSection}
             <InputGroup>
-              <Input placeholder="PROMO CODE" value={promoCode} onChange={this.onPromoCodeChange} />
+              <Input
+                className="txt-promo-code"
+                placeholder="PROMO CODE"
+                value={promoCode}
+                onChange={this.onPromoCodeChange}
+              />
               <InputGroupAddon addonType="append">
-                <Button color="primary" onClick={() => handleApplyPromocode(promoCode)}>
+                <Button
+                  className="btn-apply-promo"
+                  color="primary"
+                  onClick={() => handleApplyPromocode(promoCode)}
+                >
                   APPLY
                 </Button>
               </InputGroupAddon>

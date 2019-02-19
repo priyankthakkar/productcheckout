@@ -188,6 +188,7 @@ ShallowWrapper {
                 tag="div"
               >
                 <Input
+                  className="txt-promo-code"
                   onChange={[Function]}
                   placeholder="PROMO CODE"
                   type="text"
@@ -198,6 +199,7 @@ ShallowWrapper {
                   tag="div"
                 >
                   <Button
+                    className="btn-apply-promo"
                     color="primary"
                     onClick={[Function]}
                     tag="button"
@@ -417,6 +419,7 @@ ShallowWrapper {
                 tag="div"
               >
                 <Input
+                  className="txt-promo-code"
                   onChange={[Function]}
                   placeholder="PROMO CODE"
                   type="text"
@@ -427,6 +430,7 @@ ShallowWrapper {
                   tag="div"
                 >
                   <Button
+                    className="btn-apply-promo"
                     color="primary"
                     onClick={[Function]}
                     tag="button"
@@ -594,6 +598,7 @@ ShallowWrapper {
                   tag="div"
                 >
                   <Input
+                    className="txt-promo-code"
                     onChange={[Function]}
                     placeholder="PROMO CODE"
                     type="text"
@@ -604,6 +609,7 @@ ShallowWrapper {
                     tag="div"
                   >
                     <Button
+                      className="btn-apply-promo"
                       color="primary"
                       onClick={[Function]}
                       tag="button"
@@ -1093,6 +1099,7 @@ ShallowWrapper {
                     tag="div"
                   >
                     <Input
+                      className="txt-promo-code"
                       onChange={[Function]}
                       placeholder="PROMO CODE"
                       type="text"
@@ -1103,6 +1110,7 @@ ShallowWrapper {
                       tag="div"
                     >
                       <Button
+                        className="btn-apply-promo"
                         color="primary"
                         onClick={[Function]}
                         tag="button"
@@ -1174,6 +1182,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": Array [
                       <Input
+                        className="txt-promo-code"
                         onChange={[Function]}
                         placeholder="PROMO CODE"
                         type="text"
@@ -1184,6 +1193,7 @@ ShallowWrapper {
                         tag="div"
                       >
                         <Button
+                          className="btn-apply-promo"
                           color="primary"
                           onClick={[Function]}
                           tag="button"
@@ -1201,6 +1211,7 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "class",
                       "props": Object {
+                        "className": "txt-promo-code",
                         "onChange": [Function],
                         "placeholder": "PROMO CODE",
                         "type": "text",
@@ -1217,6 +1228,7 @@ ShallowWrapper {
                       "props": Object {
                         "addonType": "append",
                         "children": <Button
+                          className="btn-apply-promo"
                           color="primary"
                           onClick={[Function]}
                           tag="button"
@@ -1232,6 +1244,7 @@ ShallowWrapper {
                         "nodeType": "class",
                         "props": Object {
                           "children": "APPLY",
+                          "className": "btn-apply-promo",
                           "color": "primary",
                           "onClick": [Function],
                           "tag": "button",
@@ -1825,6 +1838,7 @@ ShallowWrapper {
                   tag="div"
                 >
                   <Input
+                    className="txt-promo-code"
                     onChange={[Function]}
                     placeholder="PROMO CODE"
                     type="text"
@@ -1835,6 +1849,7 @@ ShallowWrapper {
                     tag="div"
                   >
                     <Button
+                      className="btn-apply-promo"
                       color="primary"
                       onClick={[Function]}
                       tag="button"
@@ -2054,6 +2069,7 @@ ShallowWrapper {
                   tag="div"
                 >
                   <Input
+                    className="txt-promo-code"
                     onChange={[Function]}
                     placeholder="PROMO CODE"
                     type="text"
@@ -2064,6 +2080,7 @@ ShallowWrapper {
                     tag="div"
                   >
                     <Button
+                      className="btn-apply-promo"
                       color="primary"
                       onClick={[Function]}
                       tag="button"
@@ -2231,6 +2248,7 @@ ShallowWrapper {
                     tag="div"
                   >
                     <Input
+                      className="txt-promo-code"
                       onChange={[Function]}
                       placeholder="PROMO CODE"
                       type="text"
@@ -2241,6 +2259,7 @@ ShallowWrapper {
                       tag="div"
                     >
                       <Button
+                        className="btn-apply-promo"
                         color="primary"
                         onClick={[Function]}
                         tag="button"
@@ -2730,6 +2749,7 @@ ShallowWrapper {
                       tag="div"
                     >
                       <Input
+                        className="txt-promo-code"
                         onChange={[Function]}
                         placeholder="PROMO CODE"
                         type="text"
@@ -2740,6 +2760,7 @@ ShallowWrapper {
                         tag="div"
                       >
                         <Button
+                          className="btn-apply-promo"
                           color="primary"
                           onClick={[Function]}
                           tag="button"
@@ -2811,6 +2832,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": Array [
                         <Input
+                          className="txt-promo-code"
                           onChange={[Function]}
                           placeholder="PROMO CODE"
                           type="text"
@@ -2821,6 +2843,7 @@ ShallowWrapper {
                           tag="div"
                         >
                           <Button
+                            className="btn-apply-promo"
                             color="primary"
                             onClick={[Function]}
                             tag="button"
@@ -2838,6 +2861,7 @@ ShallowWrapper {
                         "key": undefined,
                         "nodeType": "class",
                         "props": Object {
+                          "className": "txt-promo-code",
                           "onChange": [Function],
                           "placeholder": "PROMO CODE",
                           "type": "text",
@@ -2854,6 +2878,7 @@ ShallowWrapper {
                         "props": Object {
                           "addonType": "append",
                           "children": <Button
+                            className="btn-apply-promo"
                             color="primary"
                             onClick={[Function]}
                             tag="button"
@@ -2869,6 +2894,7 @@ ShallowWrapper {
                           "nodeType": "class",
                           "props": Object {
                             "children": "APPLY",
+                            "className": "btn-apply-promo",
                             "color": "primary",
                             "onClick": [Function],
                             "tag": "button",
