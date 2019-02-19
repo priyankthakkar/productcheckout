@@ -46,7 +46,7 @@ ShallowWrapper {
             Product Code: wf
           </CardTitle>
           <Button
-            className="rounded-circle"
+            className="rounded-circle btn-add-product"
             color="primary"
             onClick={[Function]}
             outline={true}
@@ -66,7 +66,7 @@ ShallowWrapper {
           </Button>
            
           <Button
-            className="rounded-circle"
+            className="rounded-circle btn-remove-product"
             color="primary"
             onClick={[Function]}
             outline={true}
@@ -113,7 +113,7 @@ ShallowWrapper {
               Product Code: wf
             </CardTitle>,
             <Button
-              className="rounded-circle"
+              className="rounded-circle btn-add-product"
               color="primary"
               onClick={[Function]}
               outline={true}
@@ -133,7 +133,7 @@ ShallowWrapper {
             </Button>,
             " ",
             <Button
-              className="rounded-circle"
+              className="rounded-circle btn-remove-product"
               color="primary"
               onClick={[Function]}
               outline={true}
@@ -168,7 +168,7 @@ ShallowWrapper {
               "children": <i
                 className="fa fa-plus"
               />,
-              "className": "rounded-circle",
+              "className": "rounded-circle btn-add-product",
               "color": "primary",
               "onClick": [Function],
               "outline": true,
@@ -212,7 +212,7 @@ ShallowWrapper {
               "children": <i
                 className="fa fa-minus"
               />,
-              "className": "rounded-circle",
+              "className": "rounded-circle btn-remove-product",
               "color": "primary",
               "onClick": [Function],
               "outline": true,
@@ -272,7 +272,7 @@ ShallowWrapper {
               Product Code: wf
             </CardTitle>
             <Button
-              className="rounded-circle"
+              className="rounded-circle btn-add-product"
               color="primary"
               onClick={[Function]}
               outline={true}
@@ -292,7 +292,7 @@ ShallowWrapper {
             </Button>
              
             <Button
-              className="rounded-circle"
+              className="rounded-circle btn-remove-product"
               color="primary"
               onClick={[Function]}
               outline={true}
@@ -339,7 +339,7 @@ ShallowWrapper {
                 Product Code: wf
               </CardTitle>,
               <Button
-                className="rounded-circle"
+                className="rounded-circle btn-add-product"
                 color="primary"
                 onClick={[Function]}
                 outline={true}
@@ -359,7 +359,7 @@ ShallowWrapper {
               </Button>,
               " ",
               <Button
-                className="rounded-circle"
+                className="rounded-circle btn-remove-product"
                 color="primary"
                 onClick={[Function]}
                 outline={true}
@@ -394,7 +394,7 @@ ShallowWrapper {
                 "children": <i
                   className="fa fa-plus"
                 />,
-                "className": "rounded-circle",
+                "className": "rounded-circle btn-add-product",
                 "color": "primary",
                 "onClick": [Function],
                 "outline": true,
@@ -438,7 +438,7 @@ ShallowWrapper {
                 "children": <i
                   className="fa fa-minus"
                 />,
-                "className": "rounded-circle",
+                "className": "rounded-circle btn-remove-product",
                 "color": "primary",
                 "onClick": [Function],
                 "outline": true,

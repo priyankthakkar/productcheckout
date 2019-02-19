@@ -1,0 +1,3381 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart Component CartComponent should match its snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Cart
+    appliedPromos={
+      Array [
+        Object {
+          "amount": 1000,
+          "code": "RRD4D32",
+          "desc": "10% discount for orders above $1000 (pre-discount)",
+          "discountType": "percentage",
+          "id": 1,
+          "option": "AMOUNT",
+          "percentage": 10,
+          "type": "CART",
+        },
+        Object {
+          "code": "FF9543D1",
+          "desc": "Reduces the docgen price to $8.99 a unit when at least 10 documents are purchased",
+          "discountType": "PRICE",
+          "id": 3,
+          "option": "QUANTITY",
+          "price": 8.99,
+          "product": "docgen",
+          "quantity": 10,
+          "type": "PRODUCT",
+        },
+      ]
+    }
+    cartItems={
+      Array [
+        Object {
+          "productCode": "wf",
+          "quantity": 8,
+        },
+        Object {
+          "productCode": "docgen",
+          "quantity": 10,
+        },
+      ]
+    }
+    cartValue={
+      Object {
+        "discount": "179.98",
+        "payable": "1519.84",
+        "total": "1699.82",
+      }
+    }
+    handleApplyPromocode={[MockFunction]}
+    products={
+      Array [
+        Object {
+          "code": "wf",
+          "id": 1,
+          "name": "Workflow",
+          "price": 199.99,
+        },
+        Object {
+          "code": "docgen",
+          "id": 2,
+          "name": "Document Generation",
+          "price": 9.99,
+        },
+        Object {
+          "code": "form",
+          "id": 3,
+          "name": "Form",
+          "price": 99.99,
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <div
+          className="d-flex justify-content-center"
+        >
+          <h3>
+            <Badge
+              color="secondary"
+              pill={false}
+              tag="span"
+            >
+              Cart
+            </Badge>
+          </h3>
+        </div>,
+        <div>
+          <React.Fragment>
+            <ListGroup
+              className="products-cart"
+              tag="ul"
+            >
+              <ListGroupItem
+                className="cart-item"
+                tag="li"
+              >
+                <ForwardRef
+                  className="clearfix"
+                >
+                  <div
+                    className="float-left"
+                  >
+                    Workflow 
+                    <i
+                      className="fa fa-times"
+                    />
+                     
+                    <Badge
+                      color="secondary"
+                      pill={true}
+                      tag="span"
+                    >
+                      8
+                    </Badge>
+                  </div>
+                  <div
+                    className="float-right"
+                  >
+                    1599.92 $
+                  </div>
+                </ForwardRef>
+              </ListGroupItem>
+              <ListGroupItem
+                className="cart-item"
+                tag="li"
+              >
+                <ForwardRef
+                  className="clearfix"
+                >
+                  <div
+                    className="float-left"
+                  >
+                    Document Generation 
+                    <i
+                      className="fa fa-times"
+                    />
+                     
+                    <Badge
+                      color="secondary"
+                      pill={true}
+                      tag="span"
+                    >
+                      10
+                    </Badge>
+                  </div>
+                  <div
+                    className="float-right"
+                  >
+                    99.90 $
+                  </div>
+                </ForwardRef>
+              </ListGroupItem>
+            </ListGroup>
+            <ForwardRef>
+              <ListGroup
+                tag="ul"
+              >
+                <ListGroupItem
+                  className="applied-promo"
+                  tag="li"
+                >
+                  RRD4D32
+                </ListGroupItem>
+                <ListGroupItem
+                  className="applied-promo"
+                  tag="li"
+                >
+                  FF9543D1
+                </ListGroupItem>
+              </ListGroup>
+              <InputGroup
+                tag="div"
+              >
+                <Input
+                  onChange={[Function]}
+                  placeholder="PROMO CODE"
+                  type="text"
+                  value=""
+                />
+                <InputGroupAddon
+                  addonType="append"
+                  tag="div"
+                >
+                  <Button
+                    color="primary"
+                    onClick={[Function]}
+                    tag="button"
+                  >
+                    APPLY
+                  </Button>
+                </InputGroupAddon>
+              </InputGroup>
+            </ForwardRef>
+            <div>
+              <ListGroup
+                tag="ul"
+              >
+                <ListGroupItem
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Total Amount:
+                    </div>
+                    <div
+                      className="float-right cart-total"
+                    >
+                      1699.82
+                       $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+                <ListGroupItem
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Discount: 
+                    </div>
+                    <div
+                      className="float-right cart-discount"
+                    >
+                      179.98
+                       $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+                <ListGroupItem
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Amount Payable: 
+                    </div>
+                    <div
+                      className="float-right amount-payable"
+                    >
+                      1519.84
+                       $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+              </ListGroup>
+            </div>
+          </React.Fragment>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <h3>
+            <Badge
+              color="secondary"
+              pill={false}
+              tag="span"
+            >
+              Cart
+            </Badge>
+          </h3>,
+          "className": "d-flex justify-content-center",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <Badge
+              color="secondary"
+              pill={false}
+              tag="span"
+            >
+              Cart
+            </Badge>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Cart",
+              "color": "secondary",
+              "pill": false,
+              "tag": "span",
+            },
+            "ref": null,
+            "rendered": "Cart",
+            "type": [Function],
+          },
+          "type": "h3",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <React.Fragment>
+            <ListGroup
+              className="products-cart"
+              tag="ul"
+            >
+              <ListGroupItem
+                className="cart-item"
+                tag="li"
+              >
+                <ForwardRef
+                  className="clearfix"
+                >
+                  <div
+                    className="float-left"
+                  >
+                    Workflow 
+                    <i
+                      className="fa fa-times"
+                    />
+                     
+                    <Badge
+                      color="secondary"
+                      pill={true}
+                      tag="span"
+                    >
+                      8
+                    </Badge>
+                  </div>
+                  <div
+                    className="float-right"
+                  >
+                    1599.92 $
+                  </div>
+                </ForwardRef>
+              </ListGroupItem>
+              <ListGroupItem
+                className="cart-item"
+                tag="li"
+              >
+                <ForwardRef
+                  className="clearfix"
+                >
+                  <div
+                    className="float-left"
+                  >
+                    Document Generation 
+                    <i
+                      className="fa fa-times"
+                    />
+                     
+                    <Badge
+                      color="secondary"
+                      pill={true}
+                      tag="span"
+                    >
+                      10
+                    </Badge>
+                  </div>
+                  <div
+                    className="float-right"
+                  >
+                    99.90 $
+                  </div>
+                </ForwardRef>
+              </ListGroupItem>
+            </ListGroup>
+            <ForwardRef>
+              <ListGroup
+                tag="ul"
+              >
+                <ListGroupItem
+                  className="applied-promo"
+                  tag="li"
+                >
+                  RRD4D32
+                </ListGroupItem>
+                <ListGroupItem
+                  className="applied-promo"
+                  tag="li"
+                >
+                  FF9543D1
+                </ListGroupItem>
+              </ListGroup>
+              <InputGroup
+                tag="div"
+              >
+                <Input
+                  onChange={[Function]}
+                  placeholder="PROMO CODE"
+                  type="text"
+                  value=""
+                />
+                <InputGroupAddon
+                  addonType="append"
+                  tag="div"
+                >
+                  <Button
+                    color="primary"
+                    onClick={[Function]}
+                    tag="button"
+                  >
+                    APPLY
+                  </Button>
+                </InputGroupAddon>
+              </InputGroup>
+            </ForwardRef>
+            <div>
+              <ListGroup
+                tag="ul"
+              >
+                <ListGroupItem
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Total Amount:
+                    </div>
+                    <div
+                      className="float-right cart-total"
+                    >
+                      1699.82
+                       $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+                <ListGroupItem
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Discount: 
+                    </div>
+                    <div
+                      className="float-right cart-discount"
+                    >
+                      179.98
+                       $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+                <ListGroupItem
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Amount Payable: 
+                    </div>
+                    <div
+                      className="float-right amount-payable"
+                    >
+                      1519.84
+                       $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+              </ListGroup>
+            </div>
+          </React.Fragment>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <ListGroup
+                className="products-cart"
+                tag="ul"
+              >
+                <ListGroupItem
+                  className="cart-item"
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Workflow 
+                      <i
+                        className="fa fa-times"
+                      />
+                       
+                      <Badge
+                        color="secondary"
+                        pill={true}
+                        tag="span"
+                      >
+                        8
+                      </Badge>
+                    </div>
+                    <div
+                      className="float-right"
+                    >
+                      1599.92 $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+                <ListGroupItem
+                  className="cart-item"
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Document Generation 
+                      <i
+                        className="fa fa-times"
+                      />
+                       
+                      <Badge
+                        color="secondary"
+                        pill={true}
+                        tag="span"
+                      >
+                        10
+                      </Badge>
+                    </div>
+                    <div
+                      className="float-right"
+                    >
+                      99.90 $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+              </ListGroup>,
+              <ForwardRef>
+                <ListGroup
+                  tag="ul"
+                >
+                  <ListGroupItem
+                    className="applied-promo"
+                    tag="li"
+                  >
+                    RRD4D32
+                  </ListGroupItem>
+                  <ListGroupItem
+                    className="applied-promo"
+                    tag="li"
+                  >
+                    FF9543D1
+                  </ListGroupItem>
+                </ListGroup>
+                <InputGroup
+                  tag="div"
+                >
+                  <Input
+                    onChange={[Function]}
+                    placeholder="PROMO CODE"
+                    type="text"
+                    value=""
+                  />
+                  <InputGroupAddon
+                    addonType="append"
+                    tag="div"
+                  >
+                    <Button
+                      color="primary"
+                      onClick={[Function]}
+                      tag="button"
+                    >
+                      APPLY
+                    </Button>
+                  </InputGroupAddon>
+                </InputGroup>
+              </ForwardRef>,
+              <div>
+                <ListGroup
+                  tag="ul"
+                >
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Total Amount:
+                      </div>
+                      <div
+                        className="float-right cart-total"
+                      >
+                        1699.82
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Discount: 
+                      </div>
+                      <div
+                        className="float-right cart-discount"
+                      >
+                        179.98
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Amount Payable: 
+                      </div>
+                      <div
+                        className="float-right amount-payable"
+                      >
+                        1519.84
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                </ListGroup>
+              </div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <ListGroupItem
+                    className="cart-item"
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Workflow 
+                        <i
+                          className="fa fa-times"
+                        />
+                         
+                        <Badge
+                          color="secondary"
+                          pill={true}
+                          tag="span"
+                        >
+                          8
+                        </Badge>
+                      </div>
+                      <div
+                        className="float-right"
+                      >
+                        1599.92 $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>,
+                  <ListGroupItem
+                    className="cart-item"
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Document Generation 
+                        <i
+                          className="fa fa-times"
+                        />
+                         
+                        <Badge
+                          color="secondary"
+                          pill={true}
+                          tag="span"
+                        >
+                          10
+                        </Badge>
+                      </div>
+                      <div
+                        className="float-right"
+                      >
+                        99.90 $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>,
+                ],
+                "className": "products-cart",
+                "tag": "ul",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "1",
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Workflow 
+                        <i
+                          className="fa fa-times"
+                        />
+                         
+                        <Badge
+                          color="secondary"
+                          pill={true}
+                          tag="span"
+                        >
+                          8
+                        </Badge>
+                      </div>
+                      <div
+                        className="float-right"
+                      >
+                        1599.92 $
+                      </div>
+                    </ForwardRef>,
+                    "className": "cart-item",
+                    "tag": "li",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="float-left"
+                        >
+                          Workflow 
+                          <i
+                            className="fa fa-times"
+                          />
+                           
+                          <Badge
+                            color="secondary"
+                            pill={true}
+                            tag="span"
+                          >
+                            8
+                          </Badge>
+                        </div>,
+                        <div
+                          className="float-right"
+                        >
+                          1599.92 $
+                        </div>,
+                      ],
+                      "className": "clearfix",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            "Workflow ",
+                            <i
+                              className="fa fa-times"
+                            />,
+                            " ",
+                            <Badge
+                              color="secondary"
+                              pill={true}
+                              tag="span"
+                            >
+                              8
+                            </Badge>,
+                          ],
+                          "className": "float-left",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "Workflow ",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "fa fa-times",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          " ",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "children": 8,
+                              "color": "secondary",
+                              "pill": true,
+                              "tag": "span",
+                            },
+                            "ref": null,
+                            "rendered": 8,
+                            "type": [Function],
+                          },
+                        ],
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "1599.92 $",
+                          "className": "float-right",
+                        },
+                        "ref": null,
+                        "rendered": "1599.92 $",
+                        "type": "div",
+                      },
+                    ],
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-bwzfXH",
+                        "isStatic": true,
+                        "rules": Array [
+                          "
+  padding: 0.5rem 0;
+",
+                        ],
+                      },
+                      "displayName": "styled.div",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-bwzfXH",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    },
+                  },
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "2",
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Document Generation 
+                        <i
+                          className="fa fa-times"
+                        />
+                         
+                        <Badge
+                          color="secondary"
+                          pill={true}
+                          tag="span"
+                        >
+                          10
+                        </Badge>
+                      </div>
+                      <div
+                        className="float-right"
+                      >
+                        99.90 $
+                      </div>
+                    </ForwardRef>,
+                    "className": "cart-item",
+                    "tag": "li",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <div
+                          className="float-left"
+                        >
+                          Document Generation 
+                          <i
+                            className="fa fa-times"
+                          />
+                           
+                          <Badge
+                            color="secondary"
+                            pill={true}
+                            tag="span"
+                          >
+                            10
+                          </Badge>
+                        </div>,
+                        <div
+                          className="float-right"
+                        >
+                          99.90 $
+                        </div>,
+                      ],
+                      "className": "clearfix",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            "Document Generation ",
+                            <i
+                              className="fa fa-times"
+                            />,
+                            " ",
+                            <Badge
+                              color="secondary"
+                              pill={true}
+                              tag="span"
+                            >
+                              10
+                            </Badge>,
+                          ],
+                          "className": "float-left",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "Document Generation ",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "fa fa-times",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          " ",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "children": 10,
+                              "color": "secondary",
+                              "pill": true,
+                              "tag": "span",
+                            },
+                            "ref": null,
+                            "rendered": 10,
+                            "type": [Function],
+                          },
+                        ],
+                        "type": "div",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "99.90 $",
+                          "className": "float-right",
+                        },
+                        "ref": null,
+                        "rendered": "99.90 $",
+                        "type": "div",
+                      },
+                    ],
+                    "type": Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-bwzfXH",
+                        "isStatic": true,
+                        "rules": Array [
+                          "
+  padding: 0.5rem 0;
+",
+                        ],
+                      },
+                      "displayName": "styled.div",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-bwzfXH",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    },
+                  },
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <ListGroup
+                    tag="ul"
+                  >
+                    <ListGroupItem
+                      className="applied-promo"
+                      tag="li"
+                    >
+                      RRD4D32
+                    </ListGroupItem>
+                    <ListGroupItem
+                      className="applied-promo"
+                      tag="li"
+                    >
+                      FF9543D1
+                    </ListGroupItem>
+                  </ListGroup>,
+                  <InputGroup
+                    tag="div"
+                  >
+                    <Input
+                      onChange={[Function]}
+                      placeholder="PROMO CODE"
+                      type="text"
+                      value=""
+                    />
+                    <InputGroupAddon
+                      addonType="append"
+                      tag="div"
+                    >
+                      <Button
+                        color="primary"
+                        onClick={[Function]}
+                        tag="button"
+                      >
+                        APPLY
+                      </Button>
+                    </InputGroupAddon>
+                  </InputGroup>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": Array [
+                      <ListGroupItem
+                        className="applied-promo"
+                        tag="li"
+                      >
+                        RRD4D32
+                      </ListGroupItem>,
+                      <ListGroupItem
+                        className="applied-promo"
+                        tag="li"
+                      >
+                        FF9543D1
+                      </ListGroupItem>,
+                    ],
+                    "tag": "ul",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": "1",
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "RRD4D32",
+                        "className": "applied-promo",
+                        "tag": "li",
+                      },
+                      "ref": null,
+                      "rendered": "RRD4D32",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": "3",
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": "FF9543D1",
+                        "className": "applied-promo",
+                        "tag": "li",
+                      },
+                      "ref": null,
+                      "rendered": "FF9543D1",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": Array [
+                      <Input
+                        onChange={[Function]}
+                        placeholder="PROMO CODE"
+                        type="text"
+                        value=""
+                      />,
+                      <InputGroupAddon
+                        addonType="append"
+                        tag="div"
+                      >
+                        <Button
+                          color="primary"
+                          onClick={[Function]}
+                          tag="button"
+                        >
+                          APPLY
+                        </Button>
+                      </InputGroupAddon>,
+                    ],
+                    "tag": "div",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "onChange": [Function],
+                        "placeholder": "PROMO CODE",
+                        "type": "text",
+                        "value": "",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "addonType": "append",
+                        "children": <Button
+                          color="primary"
+                          onClick={[Function]}
+                          tag="button"
+                        >
+                          APPLY
+                        </Button>,
+                        "tag": "div",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "APPLY",
+                          "color": "primary",
+                          "onClick": [Function],
+                          "tag": "button",
+                        },
+                        "ref": null,
+                        "rendered": "APPLY",
+                        "type": [Function],
+                      },
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-htpNat",
+                  "isStatic": true,
+                  "rules": Array [
+                    "
+  padding: 0.625rem 0;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-htpNat",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              },
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <ListGroup
+                  tag="ul"
+                >
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Total Amount:
+                      </div>
+                      <div
+                        className="float-right cart-total"
+                      >
+                        1699.82
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Discount: 
+                      </div>
+                      <div
+                        className="float-right cart-discount"
+                      >
+                        179.98
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Amount Payable: 
+                      </div>
+                      <div
+                        className="float-right amount-payable"
+                      >
+                        1519.84
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                </ListGroup>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": Array [
+                    <ListGroupItem
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Total Amount:
+                        </div>
+                        <div
+                          className="float-right cart-total"
+                        >
+                          1699.82
+                           $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>,
+                    <ListGroupItem
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Discount: 
+                        </div>
+                        <div
+                          className="float-right cart-discount"
+                        >
+                          179.98
+                           $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>,
+                    <ListGroupItem
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Amount Payable: 
+                        </div>
+                        <div
+                          className="float-right amount-payable"
+                        >
+                          1519.84
+                           $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>,
+                  ],
+                  "tag": "ul",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Total Amount:
+                        </div>
+                        <div
+                          className="float-right cart-total"
+                        >
+                          1699.82
+                           $
+                        </div>
+                      </ForwardRef>,
+                      "tag": "li",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": Array [
+                          <div
+                            className="float-left"
+                          >
+                            Total Amount:
+                          </div>,
+                          <div
+                            className="float-right cart-total"
+                          >
+                            1699.82
+                             $
+                          </div>,
+                        ],
+                        "className": "clearfix",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Total Amount:",
+                            "className": "float-left",
+                          },
+                          "ref": null,
+                          "rendered": "Total Amount:",
+                          "type": "div",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              "1699.82",
+                              " $",
+                            ],
+                            "className": "float-right cart-total",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "1699.82",
+                            " $",
+                          ],
+                          "type": "div",
+                        },
+                      ],
+                      "type": Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bwzfXH",
+                          "isStatic": true,
+                          "rules": Array [
+                            "
+  padding: 0.5rem 0;
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bwzfXH",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      },
+                    },
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Discount: 
+                        </div>
+                        <div
+                          className="float-right cart-discount"
+                        >
+                          179.98
+                           $
+                        </div>
+                      </ForwardRef>,
+                      "tag": "li",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": Array [
+                          <div
+                            className="float-left"
+                          >
+                            Discount: 
+                          </div>,
+                          <div
+                            className="float-right cart-discount"
+                          >
+                            179.98
+                             $
+                          </div>,
+                        ],
+                        "className": "clearfix",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Discount: ",
+                            "className": "float-left",
+                          },
+                          "ref": null,
+                          "rendered": "Discount: ",
+                          "type": "div",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              "179.98",
+                              " $",
+                            ],
+                            "className": "float-right cart-discount",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "179.98",
+                            " $",
+                          ],
+                          "type": "div",
+                        },
+                      ],
+                      "type": Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bwzfXH",
+                          "isStatic": true,
+                          "rules": Array [
+                            "
+  padding: 0.5rem 0;
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bwzfXH",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      },
+                    },
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Amount Payable: 
+                        </div>
+                        <div
+                          className="float-right amount-payable"
+                        >
+                          1519.84
+                           $
+                        </div>
+                      </ForwardRef>,
+                      "tag": "li",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": Array [
+                          <div
+                            className="float-left"
+                          >
+                            Amount Payable: 
+                          </div>,
+                          <div
+                            className="float-right amount-payable"
+                          >
+                            1519.84
+                             $
+                          </div>,
+                        ],
+                        "className": "clearfix",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Amount Payable: ",
+                            "className": "float-left",
+                          },
+                          "ref": null,
+                          "rendered": "Amount Payable: ",
+                          "type": "div",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              "1519.84",
+                              " $",
+                            ],
+                            "className": "float-right amount-payable",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "1519.84",
+                            " $",
+                          ],
+                          "type": "div",
+                        },
+                      ],
+                      "type": Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bwzfXH",
+                          "isStatic": true,
+                          "rules": Array [
+                            "
+  padding: 0.5rem 0;
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bwzfXH",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      },
+                    },
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              "type": "div",
+            },
+          ],
+          "type": Symbol(react.fragment),
+        },
+        "type": "div",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <div
+            className="d-flex justify-content-center"
+          >
+            <h3>
+              <Badge
+                color="secondary"
+                pill={false}
+                tag="span"
+              >
+                Cart
+              </Badge>
+            </h3>
+          </div>,
+          <div>
+            <React.Fragment>
+              <ListGroup
+                className="products-cart"
+                tag="ul"
+              >
+                <ListGroupItem
+                  className="cart-item"
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Workflow 
+                      <i
+                        className="fa fa-times"
+                      />
+                       
+                      <Badge
+                        color="secondary"
+                        pill={true}
+                        tag="span"
+                      >
+                        8
+                      </Badge>
+                    </div>
+                    <div
+                      className="float-right"
+                    >
+                      1599.92 $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+                <ListGroupItem
+                  className="cart-item"
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Document Generation 
+                      <i
+                        className="fa fa-times"
+                      />
+                       
+                      <Badge
+                        color="secondary"
+                        pill={true}
+                        tag="span"
+                      >
+                        10
+                      </Badge>
+                    </div>
+                    <div
+                      className="float-right"
+                    >
+                      99.90 $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+              </ListGroup>
+              <ForwardRef>
+                <ListGroup
+                  tag="ul"
+                >
+                  <ListGroupItem
+                    className="applied-promo"
+                    tag="li"
+                  >
+                    RRD4D32
+                  </ListGroupItem>
+                  <ListGroupItem
+                    className="applied-promo"
+                    tag="li"
+                  >
+                    FF9543D1
+                  </ListGroupItem>
+                </ListGroup>
+                <InputGroup
+                  tag="div"
+                >
+                  <Input
+                    onChange={[Function]}
+                    placeholder="PROMO CODE"
+                    type="text"
+                    value=""
+                  />
+                  <InputGroupAddon
+                    addonType="append"
+                    tag="div"
+                  >
+                    <Button
+                      color="primary"
+                      onClick={[Function]}
+                      tag="button"
+                    >
+                      APPLY
+                    </Button>
+                  </InputGroupAddon>
+                </InputGroup>
+              </ForwardRef>
+              <div>
+                <ListGroup
+                  tag="ul"
+                >
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Total Amount:
+                      </div>
+                      <div
+                        className="float-right cart-total"
+                      >
+                        1699.82
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Discount: 
+                      </div>
+                      <div
+                        className="float-right cart-discount"
+                      >
+                        179.98
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Amount Payable: 
+                      </div>
+                      <div
+                        className="float-right amount-payable"
+                      >
+                        1519.84
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                </ListGroup>
+              </div>
+            </React.Fragment>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h3>
+              <Badge
+                color="secondary"
+                pill={false}
+                tag="span"
+              >
+                Cart
+              </Badge>
+            </h3>,
+            "className": "d-flex justify-content-center",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Badge
+                color="secondary"
+                pill={false}
+                tag="span"
+              >
+                Cart
+              </Badge>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Cart",
+                "color": "secondary",
+                "pill": false,
+                "tag": "span",
+              },
+              "ref": null,
+              "rendered": "Cart",
+              "type": [Function],
+            },
+            "type": "h3",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <React.Fragment>
+              <ListGroup
+                className="products-cart"
+                tag="ul"
+              >
+                <ListGroupItem
+                  className="cart-item"
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Workflow 
+                      <i
+                        className="fa fa-times"
+                      />
+                       
+                      <Badge
+                        color="secondary"
+                        pill={true}
+                        tag="span"
+                      >
+                        8
+                      </Badge>
+                    </div>
+                    <div
+                      className="float-right"
+                    >
+                      1599.92 $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+                <ListGroupItem
+                  className="cart-item"
+                  tag="li"
+                >
+                  <ForwardRef
+                    className="clearfix"
+                  >
+                    <div
+                      className="float-left"
+                    >
+                      Document Generation 
+                      <i
+                        className="fa fa-times"
+                      />
+                       
+                      <Badge
+                        color="secondary"
+                        pill={true}
+                        tag="span"
+                      >
+                        10
+                      </Badge>
+                    </div>
+                    <div
+                      className="float-right"
+                    >
+                      99.90 $
+                    </div>
+                  </ForwardRef>
+                </ListGroupItem>
+              </ListGroup>
+              <ForwardRef>
+                <ListGroup
+                  tag="ul"
+                >
+                  <ListGroupItem
+                    className="applied-promo"
+                    tag="li"
+                  >
+                    RRD4D32
+                  </ListGroupItem>
+                  <ListGroupItem
+                    className="applied-promo"
+                    tag="li"
+                  >
+                    FF9543D1
+                  </ListGroupItem>
+                </ListGroup>
+                <InputGroup
+                  tag="div"
+                >
+                  <Input
+                    onChange={[Function]}
+                    placeholder="PROMO CODE"
+                    type="text"
+                    value=""
+                  />
+                  <InputGroupAddon
+                    addonType="append"
+                    tag="div"
+                  >
+                    <Button
+                      color="primary"
+                      onClick={[Function]}
+                      tag="button"
+                    >
+                      APPLY
+                    </Button>
+                  </InputGroupAddon>
+                </InputGroup>
+              </ForwardRef>
+              <div>
+                <ListGroup
+                  tag="ul"
+                >
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Total Amount:
+                      </div>
+                      <div
+                        className="float-right cart-total"
+                      >
+                        1699.82
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Discount: 
+                      </div>
+                      <div
+                        className="float-right cart-discount"
+                      >
+                        179.98
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                  <ListGroupItem
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Amount Payable: 
+                      </div>
+                      <div
+                        className="float-right amount-payable"
+                      >
+                        1519.84
+                         $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                </ListGroup>
+              </div>
+            </React.Fragment>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <ListGroup
+                  className="products-cart"
+                  tag="ul"
+                >
+                  <ListGroupItem
+                    className="cart-item"
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Workflow 
+                        <i
+                          className="fa fa-times"
+                        />
+                         
+                        <Badge
+                          color="secondary"
+                          pill={true}
+                          tag="span"
+                        >
+                          8
+                        </Badge>
+                      </div>
+                      <div
+                        className="float-right"
+                      >
+                        1599.92 $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                  <ListGroupItem
+                    className="cart-item"
+                    tag="li"
+                  >
+                    <ForwardRef
+                      className="clearfix"
+                    >
+                      <div
+                        className="float-left"
+                      >
+                        Document Generation 
+                        <i
+                          className="fa fa-times"
+                        />
+                         
+                        <Badge
+                          color="secondary"
+                          pill={true}
+                          tag="span"
+                        >
+                          10
+                        </Badge>
+                      </div>
+                      <div
+                        className="float-right"
+                      >
+                        99.90 $
+                      </div>
+                    </ForwardRef>
+                  </ListGroupItem>
+                </ListGroup>,
+                <ForwardRef>
+                  <ListGroup
+                    tag="ul"
+                  >
+                    <ListGroupItem
+                      className="applied-promo"
+                      tag="li"
+                    >
+                      RRD4D32
+                    </ListGroupItem>
+                    <ListGroupItem
+                      className="applied-promo"
+                      tag="li"
+                    >
+                      FF9543D1
+                    </ListGroupItem>
+                  </ListGroup>
+                  <InputGroup
+                    tag="div"
+                  >
+                    <Input
+                      onChange={[Function]}
+                      placeholder="PROMO CODE"
+                      type="text"
+                      value=""
+                    />
+                    <InputGroupAddon
+                      addonType="append"
+                      tag="div"
+                    >
+                      <Button
+                        color="primary"
+                        onClick={[Function]}
+                        tag="button"
+                      >
+                        APPLY
+                      </Button>
+                    </InputGroupAddon>
+                  </InputGroup>
+                </ForwardRef>,
+                <div>
+                  <ListGroup
+                    tag="ul"
+                  >
+                    <ListGroupItem
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Total Amount:
+                        </div>
+                        <div
+                          className="float-right cart-total"
+                        >
+                          1699.82
+                           $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>
+                    <ListGroupItem
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Discount: 
+                        </div>
+                        <div
+                          className="float-right cart-discount"
+                        >
+                          179.98
+                           $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>
+                    <ListGroupItem
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Amount Payable: 
+                        </div>
+                        <div
+                          className="float-right amount-payable"
+                        >
+                          1519.84
+                           $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>
+                  </ListGroup>
+                </div>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": Array [
+                    <ListGroupItem
+                      className="cart-item"
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Workflow 
+                          <i
+                            className="fa fa-times"
+                          />
+                           
+                          <Badge
+                            color="secondary"
+                            pill={true}
+                            tag="span"
+                          >
+                            8
+                          </Badge>
+                        </div>
+                        <div
+                          className="float-right"
+                        >
+                          1599.92 $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>,
+                    <ListGroupItem
+                      className="cart-item"
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Document Generation 
+                          <i
+                            className="fa fa-times"
+                          />
+                           
+                          <Badge
+                            color="secondary"
+                            pill={true}
+                            tag="span"
+                          >
+                            10
+                          </Badge>
+                        </div>
+                        <div
+                          className="float-right"
+                        >
+                          99.90 $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>,
+                  ],
+                  "className": "products-cart",
+                  "tag": "ul",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": "1",
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Workflow 
+                          <i
+                            className="fa fa-times"
+                          />
+                           
+                          <Badge
+                            color="secondary"
+                            pill={true}
+                            tag="span"
+                          >
+                            8
+                          </Badge>
+                        </div>
+                        <div
+                          className="float-right"
+                        >
+                          1599.92 $
+                        </div>
+                      </ForwardRef>,
+                      "className": "cart-item",
+                      "tag": "li",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": Array [
+                          <div
+                            className="float-left"
+                          >
+                            Workflow 
+                            <i
+                              className="fa fa-times"
+                            />
+                             
+                            <Badge
+                              color="secondary"
+                              pill={true}
+                              tag="span"
+                            >
+                              8
+                            </Badge>
+                          </div>,
+                          <div
+                            className="float-right"
+                          >
+                            1599.92 $
+                          </div>,
+                        ],
+                        "className": "clearfix",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              "Workflow ",
+                              <i
+                                className="fa fa-times"
+                              />,
+                              " ",
+                              <Badge
+                                color="secondary"
+                                pill={true}
+                                tag="span"
+                              >
+                                8
+                              </Badge>,
+                            ],
+                            "className": "float-left",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "Workflow ",
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "fa fa-times",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "i",
+                            },
+                            " ",
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "children": 8,
+                                "color": "secondary",
+                                "pill": true,
+                                "tag": "span",
+                              },
+                              "ref": null,
+                              "rendered": 8,
+                              "type": [Function],
+                            },
+                          ],
+                          "type": "div",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "1599.92 $",
+                            "className": "float-right",
+                          },
+                          "ref": null,
+                          "rendered": "1599.92 $",
+                          "type": "div",
+                        },
+                      ],
+                      "type": Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bwzfXH",
+                          "isStatic": true,
+                          "rules": Array [
+                            "
+  padding: 0.5rem 0;
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bwzfXH",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      },
+                    },
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": "2",
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Document Generation 
+                          <i
+                            className="fa fa-times"
+                          />
+                           
+                          <Badge
+                            color="secondary"
+                            pill={true}
+                            tag="span"
+                          >
+                            10
+                          </Badge>
+                        </div>
+                        <div
+                          className="float-right"
+                        >
+                          99.90 $
+                        </div>
+                      </ForwardRef>,
+                      "className": "cart-item",
+                      "tag": "li",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": Array [
+                          <div
+                            className="float-left"
+                          >
+                            Document Generation 
+                            <i
+                              className="fa fa-times"
+                            />
+                             
+                            <Badge
+                              color="secondary"
+                              pill={true}
+                              tag="span"
+                            >
+                              10
+                            </Badge>
+                          </div>,
+                          <div
+                            className="float-right"
+                          >
+                            99.90 $
+                          </div>,
+                        ],
+                        "className": "clearfix",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              "Document Generation ",
+                              <i
+                                className="fa fa-times"
+                              />,
+                              " ",
+                              <Badge
+                                color="secondary"
+                                pill={true}
+                                tag="span"
+                              >
+                                10
+                              </Badge>,
+                            ],
+                            "className": "float-left",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "Document Generation ",
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "fa fa-times",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "i",
+                            },
+                            " ",
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "children": 10,
+                                "color": "secondary",
+                                "pill": true,
+                                "tag": "span",
+                              },
+                              "ref": null,
+                              "rendered": 10,
+                              "type": [Function],
+                            },
+                          ],
+                          "type": "div",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "99.90 $",
+                            "className": "float-right",
+                          },
+                          "ref": null,
+                          "rendered": "99.90 $",
+                          "type": "div",
+                        },
+                      ],
+                      "type": Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bwzfXH",
+                          "isStatic": true,
+                          "rules": Array [
+                            "
+  padding: 0.5rem 0;
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bwzfXH",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      },
+                    },
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": Array [
+                    <ListGroup
+                      tag="ul"
+                    >
+                      <ListGroupItem
+                        className="applied-promo"
+                        tag="li"
+                      >
+                        RRD4D32
+                      </ListGroupItem>
+                      <ListGroupItem
+                        className="applied-promo"
+                        tag="li"
+                      >
+                        FF9543D1
+                      </ListGroupItem>
+                    </ListGroup>,
+                    <InputGroup
+                      tag="div"
+                    >
+                      <Input
+                        onChange={[Function]}
+                        placeholder="PROMO CODE"
+                        type="text"
+                        value=""
+                      />
+                      <InputGroupAddon
+                        addonType="append"
+                        tag="div"
+                      >
+                        <Button
+                          color="primary"
+                          onClick={[Function]}
+                          tag="button"
+                        >
+                          APPLY
+                        </Button>
+                      </InputGroupAddon>
+                    </InputGroup>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <ListGroupItem
+                          className="applied-promo"
+                          tag="li"
+                        >
+                          RRD4D32
+                        </ListGroupItem>,
+                        <ListGroupItem
+                          className="applied-promo"
+                          tag="li"
+                        >
+                          FF9543D1
+                        </ListGroupItem>,
+                      ],
+                      "tag": "ul",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": "1",
+                        "nodeType": "function",
+                        "props": Object {
+                          "children": "RRD4D32",
+                          "className": "applied-promo",
+                          "tag": "li",
+                        },
+                        "ref": null,
+                        "rendered": "RRD4D32",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "3",
+                        "nodeType": "function",
+                        "props": Object {
+                          "children": "FF9543D1",
+                          "className": "applied-promo",
+                          "tag": "li",
+                        },
+                        "ref": null,
+                        "rendered": "FF9543D1",
+                        "type": [Function],
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <Input
+                          onChange={[Function]}
+                          placeholder="PROMO CODE"
+                          type="text"
+                          value=""
+                        />,
+                        <InputGroupAddon
+                          addonType="append"
+                          tag="div"
+                        >
+                          <Button
+                            color="primary"
+                            onClick={[Function]}
+                            tag="button"
+                          >
+                            APPLY
+                          </Button>
+                        </InputGroupAddon>,
+                      ],
+                      "tag": "div",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "onChange": [Function],
+                          "placeholder": "PROMO CODE",
+                          "type": "text",
+                          "value": "",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "addonType": "append",
+                          "children": <Button
+                            color="primary"
+                            onClick={[Function]}
+                            tag="button"
+                          >
+                            APPLY
+                          </Button>,
+                          "tag": "div",
+                        },
+                        "ref": null,
+                        "rendered": Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "children": "APPLY",
+                            "color": "primary",
+                            "onClick": [Function],
+                            "tag": "button",
+                          },
+                          "ref": null,
+                          "rendered": "APPLY",
+                          "type": [Function],
+                        },
+                        "type": [Function],
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                ],
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-htpNat",
+                    "isStatic": true,
+                    "rules": Array [
+                      "
+  padding: 0.625rem 0;
+",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-htpNat",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                },
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <ListGroup
+                    tag="ul"
+                  >
+                    <ListGroupItem
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Total Amount:
+                        </div>
+                        <div
+                          className="float-right cart-total"
+                        >
+                          1699.82
+                           $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>
+                    <ListGroupItem
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Discount: 
+                        </div>
+                        <div
+                          className="float-right cart-discount"
+                        >
+                          179.98
+                           $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>
+                    <ListGroupItem
+                      tag="li"
+                    >
+                      <ForwardRef
+                        className="clearfix"
+                      >
+                        <div
+                          className="float-left"
+                        >
+                          Amount Payable: 
+                        </div>
+                        <div
+                          className="float-right amount-payable"
+                        >
+                          1519.84
+                           $
+                        </div>
+                      </ForwardRef>
+                    </ListGroupItem>
+                  </ListGroup>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": Array [
+                      <ListGroupItem
+                        tag="li"
+                      >
+                        <ForwardRef
+                          className="clearfix"
+                        >
+                          <div
+                            className="float-left"
+                          >
+                            Total Amount:
+                          </div>
+                          <div
+                            className="float-right cart-total"
+                          >
+                            1699.82
+                             $
+                          </div>
+                        </ForwardRef>
+                      </ListGroupItem>,
+                      <ListGroupItem
+                        tag="li"
+                      >
+                        <ForwardRef
+                          className="clearfix"
+                        >
+                          <div
+                            className="float-left"
+                          >
+                            Discount: 
+                          </div>
+                          <div
+                            className="float-right cart-discount"
+                          >
+                            179.98
+                             $
+                          </div>
+                        </ForwardRef>
+                      </ListGroupItem>,
+                      <ListGroupItem
+                        tag="li"
+                      >
+                        <ForwardRef
+                          className="clearfix"
+                        >
+                          <div
+                            className="float-left"
+                          >
+                            Amount Payable: 
+                          </div>
+                          <div
+                            className="float-right amount-payable"
+                          >
+                            1519.84
+                             $
+                          </div>
+                        </ForwardRef>
+                      </ListGroupItem>,
+                    ],
+                    "tag": "ul",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": <ForwardRef
+                          className="clearfix"
+                        >
+                          <div
+                            className="float-left"
+                          >
+                            Total Amount:
+                          </div>
+                          <div
+                            className="float-right cart-total"
+                          >
+                            1699.82
+                             $
+                          </div>
+                        </ForwardRef>,
+                        "tag": "li",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "children": Array [
+                            <div
+                              className="float-left"
+                            >
+                              Total Amount:
+                            </div>,
+                            <div
+                              className="float-right cart-total"
+                            >
+                              1699.82
+                               $
+                            </div>,
+                          ],
+                          "className": "clearfix",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Total Amount:",
+                              "className": "float-left",
+                            },
+                            "ref": null,
+                            "rendered": "Total Amount:",
+                            "type": "div",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                "1699.82",
+                                " $",
+                              ],
+                              "className": "float-right cart-total",
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              "1699.82",
+                              " $",
+                            ],
+                            "type": "div",
+                          },
+                        ],
+                        "type": Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-bwzfXH",
+                            "isStatic": true,
+                            "rules": Array [
+                              "
+  padding: 0.5rem 0;
+",
+                            ],
+                          },
+                          "displayName": "styled.div",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-bwzfXH",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        },
+                      },
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": <ForwardRef
+                          className="clearfix"
+                        >
+                          <div
+                            className="float-left"
+                          >
+                            Discount: 
+                          </div>
+                          <div
+                            className="float-right cart-discount"
+                          >
+                            179.98
+                             $
+                          </div>
+                        </ForwardRef>,
+                        "tag": "li",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "children": Array [
+                            <div
+                              className="float-left"
+                            >
+                              Discount: 
+                            </div>,
+                            <div
+                              className="float-right cart-discount"
+                            >
+                              179.98
+                               $
+                            </div>,
+                          ],
+                          "className": "clearfix",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Discount: ",
+                              "className": "float-left",
+                            },
+                            "ref": null,
+                            "rendered": "Discount: ",
+                            "type": "div",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                "179.98",
+                                " $",
+                              ],
+                              "className": "float-right cart-discount",
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              "179.98",
+                              " $",
+                            ],
+                            "type": "div",
+                          },
+                        ],
+                        "type": Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-bwzfXH",
+                            "isStatic": true,
+                            "rules": Array [
+                              "
+  padding: 0.5rem 0;
+",
+                            ],
+                          },
+                          "displayName": "styled.div",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-bwzfXH",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        },
+                      },
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": <ForwardRef
+                          className="clearfix"
+                        >
+                          <div
+                            className="float-left"
+                          >
+                            Amount Payable: 
+                          </div>
+                          <div
+                            className="float-right amount-payable"
+                          >
+                            1519.84
+                             $
+                          </div>
+                        </ForwardRef>,
+                        "tag": "li",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "function",
+                        "props": Object {
+                          "children": Array [
+                            <div
+                              className="float-left"
+                            >
+                              Amount Payable: 
+                            </div>,
+                            <div
+                              className="float-right amount-payable"
+                            >
+                              1519.84
+                               $
+                            </div>,
+                          ],
+                          "className": "clearfix",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Amount Payable: ",
+                              "className": "float-left",
+                            },
+                            "ref": null,
+                            "rendered": "Amount Payable: ",
+                            "type": "div",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": Array [
+                                "1519.84",
+                                " $",
+                              ],
+                              "className": "float-right amount-payable",
+                            },
+                            "ref": null,
+                            "rendered": Array [
+                              "1519.84",
+                              " $",
+                            ],
+                            "type": "div",
+                          },
+                        ],
+                        "type": Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "sc-bwzfXH",
+                            "isStatic": true,
+                            "rules": Array [
+                              "
+  padding: 0.5rem 0;
+",
+                            ],
+                          },
+                          "displayName": "styled.div",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "sc-bwzfXH",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        },
+                      },
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                "type": "div",
+              },
+            ],
+            "type": Symbol(react.fragment),
+          },
+          "type": "div",
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

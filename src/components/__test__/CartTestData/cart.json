@@ -1,0 +1,17 @@
+{
+  "cartItems": [
+    {
+      "productCode": "wf",
+      "quantity": 8
+    },
+    {
+      "productCode": "docgen",
+      "quantity": 10
+    }
+  ],
+  "cartValue": {
+    "total": "1699.82",
+    "discount": "179.98",
+    "payable": "1519.84"
+  }
+}

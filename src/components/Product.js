@@ -14,7 +14,7 @@ const Product = ({
       <Button
         color="primary"
         outline
-        className="rounded-circle"
+        className="rounded-circle btn-add-product"
         onClick={() => handleAddProduct(product.code)}
       >
         <i className="fa fa-plus" />
@@ -27,7 +27,7 @@ const Product = ({
       <Button
         color="primary"
         outline
-        className="rounded-circle"
+        className="rounded-circle btn-remove-product"
         onClick={() => handleRemoveProduct(product.code)}
       >
         <i className="fa fa-minus" />

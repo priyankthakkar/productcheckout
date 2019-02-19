@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "code": "wf",
+    "name": "Workflow",
+    "price": 199.99
+  },
+  {
+    "id": 2,
+    "code": "docgen",
+    "name": "Document Generation",
+    "price": 9.99
+  },
+  {
+    "id": 3,
+    "code": "form",
+    "name": "Form",
+    "price": 99.99
+  }
+]

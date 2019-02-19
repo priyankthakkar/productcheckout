@@ -11,7 +11,6 @@ import {
   Button,
 } from 'reactstrap';
 import Banner from './Banner';
-import { getAppliedPromos } from '../util';
 
 const ClearFixDiv = styled.div`
   padding: 0.5rem 0;
@@ -40,7 +39,7 @@ class Cart extends React.Component {
     let cartDisplay;
     let promosSection;
     if (!cartItems || cartItems.length === 0) {
-      cartDisplay = <Banner message="Your cart is empty." />;
+      cartDisplay = <Banner className="cart-status-message" message="Your cart is empty." />;
     } else {
       const cartItemsToDisplay = cartItems.map((ci) => {
         const product = products.find(p => p.code === ci.productCode);
@@ -53,7 +52,7 @@ class Cart extends React.Component {
       const cartContent = cartItemsToDisplay.map((displayItem) => {
         const { product, quantity } = displayItem;
         return (
-          <ListGroupItem key={product.id}>
+          <ListGroupItem className="cart-item" key={product.id}>
             <ClearFixDiv className="clearfix">
               <div className="float-left">
                 {`${product.name} `}
@@ -71,7 +70,9 @@ class Cart extends React.Component {
         promosSection = (
           <ListGroup>
             {appliedPromos.map(pc => (
-              <ListGroupItem key={pc.id}>{pc.code}</ListGroupItem>
+              <ListGroupItem className="applied-promo" key={pc.id}>
+                {pc.code}
+              </ListGroupItem>
             ))}
           </ListGroup>
         );
@@ -79,7 +80,7 @@ class Cart extends React.Component {
 
       cartDisplay = (
         <Fragment>
-          <ListGroup>{cartContent}</ListGroup>
+          <ListGroup className="products-cart">{cartContent}</ListGroup>
           <PromoContainer>
             {promosSection}
             <InputGroup>
@@ -96,7 +97,7 @@ class Cart extends React.Component {
               <ListGroupItem>
                 <ClearFixDiv className="clearfix">
                   <div className="float-left">Total Amount:</div>
-                  <div className="float-right">
+                  <div className="float-right cart-total">
                     {total}
                     {' $'}
                   </div>
@@ -105,7 +106,7 @@ class Cart extends React.Component {
               <ListGroupItem>
                 <ClearFixDiv className="clearfix">
                   <div className="float-left">Discount: </div>
-                  <div className="float-right">
+                  <div className="float-right cart-discount">
                     {discount}
                     {' $'}
                   </div>
@@ -114,7 +115,7 @@ class Cart extends React.Component {
               <ListGroupItem>
                 <ClearFixDiv className="clearfix">
                   <div className="float-left">Amount Payable: </div>
-                  <div className="float-right">
+                  <div className="float-right amount-payable">
                     {payable}
                     {' $'}
                   </div>
@@ -161,5 +162,19 @@ Cart.propTypes = {
     discount: PropTypes.string.isRequired,
     payable: PropTypes.string.isRequired,
   }).isRequired,
+  appliedPromos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      code: PropTypes.string,
+      desc: PropTypes.string,
+      type: PropTypes.string,
+      option: PropTypes.string,
+      amount: PropTypes.number,
+      discountType: PropTypes.string,
+      percentage: PropTypes.number,
+      product: PropTypes.string,
+      quantity: PropTypes.number,
+    }),
+  ).isRequired,
   handleApplyPromocode: PropTypes.func.isRequired,
 };

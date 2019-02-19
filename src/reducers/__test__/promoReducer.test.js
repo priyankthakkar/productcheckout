@@ -1,0 +1,113 @@
+import reducers from '..';
+
+test('Promos loaded should be preserved in the state', () => {
+  const state = reducers(
+    {
+      isLoading: true,
+      products: [],
+      error: null,
+      cart: { cartItems: [], cartValue: { total: 0, discount: 0, payable: 0 } },
+      promo: { promos: [], appliedPromos: [] },
+    },
+    {
+      type: 'PROMOS_LOAD_SUCCESS',
+      promos: [
+        {
+          id: 1,
+          code: 'RRD4D32',
+          desc: '10% discount for orders above $1000 (pre-discount)',
+          type: 'CART',
+          option: 'AMOUNT',
+          amount: 1000,
+          discountType: 'percentage',
+          percentage: 10,
+        },
+        {
+          id: 2,
+          code: '44F4T11',
+          desc: '15% discount for orders above $1500 (pre-discount)',
+          type: 'CART',
+          option: 'AMOUNT',
+          amount: 1500,
+          discountType: 'percentage',
+          percentage: 15,
+        },
+        {
+          id: 3,
+          code: 'FF9543D1',
+          desc: 'Reduces the docgen price to $8.99 a unit when at least 10 documents are purchased',
+          type: 'PRODUCT',
+          product: 'docgen',
+          option: 'QUANTITY',
+          quantity: 10,
+          discountType: 'PRICE',
+          price: 8.99,
+        },
+        {
+          id: 4,
+          code: 'YYGWKJD',
+          desc: 'Reduces the form price to $89.99 a unit when at least 1 wf is purchased',
+          type: 'PRODUCT',
+          product: 'form',
+          option: 'QUANTITY',
+          quantity: 1,
+          discountType: 'PRICE',
+          price: 89.99,
+        },
+      ],
+    },
+  );
+  expect(state).toEqual({
+    isLoading: true,
+    products: [],
+    error: null,
+    cart: { cartItems: [], cartValue: { total: 0, discount: 0, payable: 0 } },
+    promo: {
+      promos: [
+        {
+          id: 1,
+          code: 'RRD4D32',
+          desc: '10% discount for orders above $1000 (pre-discount)',
+          type: 'CART',
+          option: 'AMOUNT',
+          amount: 1000,
+          discountType: 'percentage',
+          percentage: 10,
+        },
+        {
+          id: 2,
+          code: '44F4T11',
+          desc: '15% discount for orders above $1500 (pre-discount)',
+          type: 'CART',
+          option: 'AMOUNT',
+          amount: 1500,
+          discountType: 'percentage',
+          percentage: 15,
+        },
+        {
+          id: 3,
+          code: 'FF9543D1',
+          desc: 'Reduces the docgen price to $8.99 a unit when at least 10 documents are purchased',
+          type: 'PRODUCT',
+          product: 'docgen',
+          option: 'QUANTITY',
+          quantity: 10,
+          discountType: 'PRICE',
+          price: 8.99,
+        },
+        {
+          id: 4,
+          code: 'YYGWKJD',
+          desc: 'Reduces the form price to $89.99 a unit when at least 1 wf is purchased',
+          type: 'PRODUCT',
+          product: 'form',
+          option: 'QUANTITY',
+          quantity: 1,
+          discountType: 'PRICE',
+          price: 89.99,
+        },
+      ],
+      appliedPromos: [],
+    },
+  });
+});
