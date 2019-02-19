@@ -23,3 +23,5 @@ The application should start by **default on a port 3000**
 **React eco-system used is: React, reactstrap, Redux, Redux Saga, Jest, Enzyme, Styled Components**
 
 In terms of ESLint, I have tried to follow **eslint-airbnb** config rule as closely as possible.
+
+Whenever APIs were required, I have used a mocking solution from JSON Placeholder from typicode.
