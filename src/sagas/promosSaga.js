@@ -8,7 +8,7 @@ import {
 } from '../actions';
 import { getCart, getAppliedPromos, isPromoCodeValid } from '../util';
 
-function* handlePromosLoad() {
+export function* handlePromosLoad() {
   try {
     const promos = yield call(fetchPromos);
     yield put(setPromos(promos));
@@ -21,9 +21,9 @@ export function* watchPromosLoad() {
   yield takeLatest(PROMOS_LOAD, handlePromosLoad);
 }
 
-const getPromos = state => state.promo.promos;
+export const getPromos = state => state.promo.promos;
 
-function* handlePromoApply({ promoCode }) {
+export function* handlePromoApply({ promoCode }) {
   const promos = yield select(getPromos);
   const appliedPromos = yield select(getAppliedPromos);
   const cart = yield select(getCart);

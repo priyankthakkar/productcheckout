@@ -3,7 +3,7 @@ import { PRODUCTS_LOAD } from '../constants';
 import { fetchProducts } from '../api';
 import { setProducts, setError } from '../actions';
 
-function* handleProductsLoad() {
+export function* handleProductsLoad() {
   try {
     const products = yield call(fetchProducts);
     yield put(setProducts(products));
@@ -12,8 +12,6 @@ function* handleProductsLoad() {
   }
 }
 
-function* watchProductsLoad() {
+export default function* watchProductsLoad() {
   yield takeEvery(PRODUCTS_LOAD, handleProductsLoad);
 }
-
-export default watchProductsLoad;
